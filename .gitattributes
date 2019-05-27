@@ -1,0 +1,12 @@
+# excluded from language stats and suppressed in diffs
+.idea linguist-generated
+
+# excluded from language stats
+fastlane/* linguist-vendored
+Templates/* linguist-vendored
+*.yml linguist-vendored
+*.sh linguist-vendored
+Podfile linguist-vendored
+
+# excluded from language stats
+*.md linguist-documentation
