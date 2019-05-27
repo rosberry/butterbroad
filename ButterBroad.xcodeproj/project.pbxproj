@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86F163942292548E003F734C /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163922292548E003F734C /* AnalyticsEvent.swift */; };
+		861A7815229BBAE1008B6687 /* Butter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A7814229BBAE1008B6687 /* Butter.swift */; };
+		86F163942292548E003F734C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163922292548E003F734C /* Event.swift */; };
 		86F163952292548E003F734C /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163932292548E003F734C /* Analytics.swift */; };
 		86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16397229254A8003F734C /* StorageServiceProtocol.swift */; };
 		86F1639B229254A8003F734C /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16398229254A8003F734C /* UserDefaults+Storage.swift */; };
 		86F1639C229254A8003F734C /* SerivceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16399229254A8003F734C /* SerivceFactory.swift */; };
-		86F1639E229255B9003F734C /* ButterBroad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1639D229255B9003F734C /* ButterBroad.swift */; };
 		86F1640D22927648003F734C /* ButterBroadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1640C22927648003F734C /* ButterBroadTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,14 +28,14 @@
 
 /* Begin PBXFileReference section */
 		861A77FD229BB133008B6687 /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		861A7814229BBAE1008B6687 /* Butter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Butter.swift; sourceTree = "<group>"; };
 		86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1636B229253BD003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86F163922292548E003F734C /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		86F163922292548E003F734C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		86F163932292548E003F734C /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		86F16397229254A8003F734C /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		86F16398229254A8003F734C /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		86F16399229254A8003F734C /* SerivceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerivceFactory.swift; sourceTree = "<group>"; };
-		86F1639D229255B9003F734C /* ButterBroad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButterBroad.swift; sourceTree = "<group>"; };
 		86F163FF229275CF003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F1640C22927648003F734C /* ButterBroadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButterBroadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				86F1639F2292644E003F734C /* Sources */,
-				86F1639D229255B9003F734C /* ButterBroad.swift */,
+				861A7814229BBAE1008B6687 /* Butter.swift */,
 				86F16369229253BD003F734C /* ButterBroad */,
 				86F163FC229275CF003F734C /* ButterBroadTests */,
 				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				86F163932292548E003F734C /* Analytics.swift */,
-				86F163922292548E003F734C /* AnalyticsEvent.swift */,
+				86F163922292548E003F734C /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,12 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86F1639E229255B9003F734C /* ButterBroad.swift in Sources */,
+				861A7815229BBAE1008B6687 /* Butter.swift in Sources */,
 				86F1639B229254A8003F734C /* UserDefaults+Storage.swift in Sources */,
 				86F1639C229254A8003F734C /* SerivceFactory.swift in Sources */,
 				86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */,
 				86F163952292548E003F734C /* Analytics.swift in Sources */,
-				86F163942292548E003F734C /* AnalyticsEvent.swift in Sources */,
+				86F163942292548E003F734C /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ public protocol Analytics {
     ///
     /// - Parameters:
     ///    - event: the event that should be sent to the analytics service
-    func logEvent(_ event: AnalyticsEvent)
+    func logEvent(_ event: Event)
 
     /// Sends the event with provided name and params dictionaty to the analytics service
     ///
@@ -28,6 +28,6 @@ public protocol Analytics {
 extension Analytics {
 
     public func logEvent(with name: String, params: [String: String] = [:]) {
-        logEvent(AnalyticsEvent(name: name, params: params))
+        logEvent(Event(name: name, params: params))
     }
 }

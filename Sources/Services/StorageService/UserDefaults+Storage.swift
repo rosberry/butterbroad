@@ -17,10 +17,10 @@ extension UserDefaults: StorageServiceProtocol {
     private static let encoder = JSONEncoder()
     private static let decoder = JSONDecoder()
 
-    var events: [AnalyticsEvent] {
+    var events: [Event] {
         get {
             if let data = data(forKey: Keys.events),
-                let events = try? UserDefaults.decoder.decode([AnalyticsEvent].self, from: data) {
+                let events = try? UserDefaults.decoder.decode([Event].self, from: data) {
                 return events
             }
             return []

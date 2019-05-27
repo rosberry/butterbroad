@@ -11,5 +11,5 @@ protocol HasStorageService {
 }
 
 protocol StorageServiceProtocol: class {
-    var events: [AnalyticsEvent] { get set }
+    var events: [Event] { get set }
 }

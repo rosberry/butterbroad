@@ -8,20 +8,20 @@ import XCTest
 class ButterBroadTests: XCTestCase {
 
     class MockedAnalytics: Analytics {
-        var events = [AnalyticsEvent]()
+        var events = [Event]()
 
-        func logEvent(_ event: AnalyticsEvent) {
+        func logEvent(_ event: Event) {
             events.append(event)
         }
     }
 
     func testLogEvent() {
         let mockedAnalytics = MockedAnalytics()
-        let butterbroad = ButterBroad(with: mockedAnalytics)
+        let butterbroad = Butter(with: mockedAnalytics)
         let date = Date()
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(AnalyticsEvent(name: "test_event"))
+        butterbroad.logEvent(Event(name: "test_event"))
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -38,7 +38,7 @@ class ButterBroadTests: XCTestCase {
 
     func testLogEventWithName() {
         let mockedAnalytics = MockedAnalytics()
-        let butterbroad = ButterBroad(with: mockedAnalytics)
+        let butterbroad = Butter(with: mockedAnalytics)
         let date = Date()
 
         let expectation = self.expectation(description: "Event Sending")
@@ -59,10 +59,10 @@ class ButterBroadTests: XCTestCase {
 
     func testLogEventWithParam() {
         let mockedAnalytics = MockedAnalytics()
-        let butterbroad = ButterBroad(with: mockedAnalytics)
+        let butterbroad = Butter(with: mockedAnalytics)
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(AnalyticsEvent(name: "test_event", params: ["param_1": "test"]))
+        butterbroad.logEvent(Event(name: "test_event", params: ["param_1": "test"]))
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -81,7 +81,7 @@ class ButterBroadTests: XCTestCase {
 
     func testLogEventWithNameAndParam() {
         let mockedAnalytics = MockedAnalytics()
-        let butterbroad = ButterBroad(with: mockedAnalytics)
+        let butterbroad = Butter(with: mockedAnalytics)
 
         let expectation = self.expectation(description: "Event Sending")
         butterbroad.logEvent(with: "test_event", params: ["param_1": "test"])

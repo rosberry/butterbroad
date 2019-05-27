@@ -11,12 +11,12 @@ import Foundation
 // Struct for an event instanse that provides basic information that can be sent
 // to the analytics service
 
-public struct AnalyticsEvent: Codable {
+public struct Event: Codable {
     public let name: String
     public let params: [String: String]
     public let date: Date
 
-    init(name: String, params: [String: String] = [:]) {
+    public init(name: String, params: [String: String] = [:]) {
         self.name = name
         self.params = params
         self.date = Date()

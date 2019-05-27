@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ButterBroad: Analytics {
+public final class Butter: Analytics {
 
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
@@ -22,7 +22,7 @@ public final class ButterBroad: Analytics {
     /// - Parameters:
     ///    - broads: list of initialized analytics plugins
 
-    init(with broads: Analytics...) {
+    public init(with broads: Analytics...) {
         self.broads = broads
     }
 
@@ -36,13 +36,13 @@ public final class ButterBroad: Analytics {
     /// - Parameters:
     ///    - event: the event that should be sent to the list of analytics plugins
 
-    public func logEvent(_ event: AnalyticsEvent) {
+    public func logEvent(_ event: Event) {
         putIntoQueue(event)
     }
 
     // MARK: - Private
 
-    private func putIntoQueue(_ event: AnalyticsEvent) {
+    private func putIntoQueue(_ event: Event) {
         dependencies.storageService.events.append(event)
         if eventsQueueTimer != nil {
             return
@@ -64,7 +64,7 @@ public final class ButterBroad: Analytics {
         logToBroads(event)
     }
 
-    private func logToBroads(_ event: AnalyticsEvent) {
+    private func logToBroads(_ event: Event) {
         broads.forEach { broad in
             broad.logEvent(event)
         }
