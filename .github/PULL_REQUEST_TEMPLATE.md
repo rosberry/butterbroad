@@ -21,9 +21,7 @@
 - [ ] The appropriate pull request label is selected (Ready | WIP)
 - [ ] Follows code style
 - [ ] Has no SwiftLint warnings
-- [ ] Checked UI layout on iPhone X and iPads
 - [ ] Retain cycles were checked
-- [ ] Increase database scheme version if there are changes in any models
 - [ ] Has no force unwraps
 - [ ] Access control words were checked
 - [ ] Checked that the app correctly handles `background` and `foreground` states
