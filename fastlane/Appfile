@@ -1,0 +1,6 @@
+# apple_id "apple@rosberry.com"
+# team_name "O4S Rosberry"
+
+# If `itunes_connect_id` is nil then `apple_id` will be used. Pilot works so.
+# itunes_connect_id "client@rosberry.com"
+# itc_team_name "O4S Client"
