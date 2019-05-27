@@ -8,9 +8,9 @@ import XCTest
 class ButterBroadTests: XCTestCase {
 
     class MockedAnalytics: Analytics {
-        var events = [Event]()
+        var events = [AnalyticsEvent]()
 
-        func logEvent(_ event: Event) {
+        func logEvent(_ event: AnalyticsEvent) {
             events.append(event)
         }
     }
@@ -21,7 +21,7 @@ class ButterBroadTests: XCTestCase {
         let date = Date()
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(Event(name: "test_event"))
+        butterbroad.logEvent(AnalyticsEvent(name: "test_event"))
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -62,7 +62,7 @@ class ButterBroadTests: XCTestCase {
         let butterbroad = ButterBroad(with: mockedAnalytics)
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(Event(name: "test_event", params: ["param_1": "test"]))
+        butterbroad.logEvent(AnalyticsEvent(name: "test_event", params: ["param_1": "test"]))
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()

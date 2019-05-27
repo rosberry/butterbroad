@@ -10,12 +10,12 @@ import Foundation
 
 /// protocool-adapter that provides an ability to send events to some analytics service
 
-protocol Analytics {
+public protocol Analytics {
     /// Sends the event instance to the analytics service
     ///
     /// - Parameters:
     ///    - event: the event that should be sent to the analytics service
-    func logEvent(_ event: Event)
+    func logEvent(_ event: AnalyticsEvent)
 
     /// Sends the event with provided name and params dictionaty to the analytics service
     ///
@@ -27,7 +27,7 @@ protocol Analytics {
 
 extension Analytics {
 
-    func logEvent(with name: String, params: [String: String] = [:]) {
-        logEvent(Event(name: name, params: params))
+    public func logEvent(with name: String, params: [String: String] = [:]) {
+        logEvent(AnalyticsEvent(name: name, params: params))
     }
 }
