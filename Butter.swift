@@ -1,8 +1,6 @@
 //
 //  ButterBroad.swift
-//  ButterBroad
 //
-//  Created by Nick Tyunin on 17/05/2019.
 //  Copyright © 2019 Rosberry. All rights reserved.
 //
 
@@ -22,7 +20,7 @@ public final class Butter: Analytics {
     /// - Parameters:
     ///    - broads: list of initialized analytics plugins
 
-    public init(with broads: Analytics...) {
+    public init(broads: Analytics...) {
         self.broads = broads
     }
 
@@ -31,12 +29,12 @@ public final class Butter: Analytics {
     /// Note that butterbroad does not send an event immediately
     /// Instead of that it await `requestDelay` and sends all awaiting events
     /// All events cached to the device storage to make sure that all of them
-    /// will be sent if app could not send them at the time by some reason (killed, crashed, e.t.c.)
+    /// will be sent if app could not send them at the time by some reason (killed, crashed, etc.)
     ///
     /// - Parameters:
     ///    - event: the event that should be sent to the list of analytics plugins
 
-    public func logEvent(_ event: Event) {
+    public func log(_ event: Event) {
         putIntoQueue(event)
     }
 
@@ -66,7 +64,12 @@ public final class Butter: Analytics {
 
     private func logToBroads(_ event: Event) {
         broads.forEach { broad in
-            broad.logEvent(event)
+            broad.log(event)
         }
+    }
+    
+    deinit {
+        eventsQueueTimer?.invalidate()
+        eventsQueueTimer = nil
     }
 }

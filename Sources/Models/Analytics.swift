@@ -1,12 +1,8 @@
 //
 //  Analytics.swift
-//  ButterBroad
 //
-//  Created by Nick Tyunin on 17/05/2019.
 //  Copyright © 2019 Rosberry. All rights reserved.
 //
-
-import Foundation
 
 /// protocool-adapter that provides an ability to send events to some analytics service
 
@@ -15,7 +11,7 @@ public protocol Analytics {
     ///
     /// - Parameters:
     ///    - event: the event that should be sent to the analytics service
-    func logEvent(_ event: Event)
+    func log(_ event: Event)
 
     /// Sends the event with provided name and params dictionaty to the analytics service
     ///
@@ -28,6 +24,6 @@ public protocol Analytics {
 extension Analytics {
 
     public func logEvent(with name: String, params: [String: String] = [:]) {
-        logEvent(Event(name: name, params: params))
+        log(Event(name: name, params: params))
     }
 }
