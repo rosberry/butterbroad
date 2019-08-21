@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0116552122FC023F002010E5 /* AnalogBroad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0116552022FC023F002010E5 /* AnalogBroad.swift */; };
-		013F44B6230D46A3000CBAEF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 013F44B5230D46A3000CBAEF /* Cartfile */; };
+		015A89D3230D5B49002600FF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 015A89D2230D5B49002600FF /* Cartfile */; };
+		015A89D6230D5BB5002600FF /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015A89D4230D5BB5002600FF /* ButterBroad.framework */; };
+		015A89D7230D5BB5002600FF /* Analog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 015A89D5230D5BB5002600FF /* Analog.framework */; };
 		0166D44622FBFC0700EC7FF4 /* AnalogBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0166D43C22FBFC0700EC7FF4 /* AnalogBroad.framework */; };
 		0166D44B22FBFC0700EC7FF4 /* AnalogBroadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166D44A22FBFC0700EC7FF4 /* AnalogBroadTests.swift */; };
-		0180891F22FC2730005FA5F7 /* Analog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0180891C22FC26CE005FA5F7 /* Analog.framework */; };
-		0180892022FC2730005FA5F7 /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0180891B22FC26CE005FA5F7 /* ButterBroad.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +27,9 @@
 
 /* Begin PBXFileReference section */
 		0116552022FC023F002010E5 /* AnalogBroad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogBroad.swift; sourceTree = "<group>"; };
-		013F44B5230D46A3000CBAEF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
+		015A89D2230D5B49002600FF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		015A89D4230D5BB5002600FF /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = AnalogBroad/Carthage/Build/iOS/ButterBroad.framework; sourceTree = "<group>"; };
+		015A89D5230D5BB5002600FF /* Analog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analog.framework; path = AnalogBroad/Carthage/Build/iOS/Analog.framework; sourceTree = "<group>"; };
 		0166D43C22FBFC0700EC7FF4 /* AnalogBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalogBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0166D44022FBFC0700EC7FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0166D44522FBFC0700EC7FF4 /* AnalogBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalogBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,8 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0180891F22FC2730005FA5F7 /* Analog.framework in Frameworks */,
-				0180892022FC2730005FA5F7 /* ButterBroad.framework in Frameworks */,
+				015A89D6230D5BB5002600FF /* ButterBroad.framework in Frameworks */,
+				015A89D7230D5BB5002600FF /* Analog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +79,8 @@
 		01432C0022FBFC6300740248 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				015A89D5230D5BB5002600FF /* Analog.framework */,
+				015A89D4230D5BB5002600FF /* ButterBroad.framework */,
 				0180891C22FC26CE005FA5F7 /* Analog.framework */,
 				0180891B22FC26CE005FA5F7 /* ButterBroad.framework */,
 			);
@@ -86,7 +90,6 @@
 		0166D43222FBFC0700EC7FF4 = {
 			isa = PBXGroup;
 			children = (
-				013F44B5230D46A3000CBAEF /* Cartfile */,
 				0166D43E22FBFC0700EC7FF4 /* AnalogBroad */,
 				0166D44922FBFC0700EC7FF4 /* AnalogBroadTests */,
 				0166D43D22FBFC0700EC7FF4 /* Products */,
@@ -107,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				013F44B3230D463E000CBAEF /* Classes */,
+				015A89D2230D5B49002600FF /* Cartfile */,
 				0166D44022FBFC0700EC7FF4 /* Info.plist */,
 			);
 			path = AnalogBroad;
@@ -213,7 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013F44B6230D46A3000CBAEF /* Cartfile in Resources */,
+				015A89D3230D5B49002600FF /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +239,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Analog.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/ButterBroad.framework",
+				"$(SRCROOT)/AnalogBroad/Carthage/Build/iOS/Analog.framework",
+				"$(SRCROOT)/AnalogBroad/Carthage/Build/iOS/ButterBroad.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -417,6 +421,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/AnalogBroad/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AnalogBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -450,6 +455,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+					"$(PROJECT_DIR)/AnalogBroad/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AnalogBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
