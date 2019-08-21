@@ -4,4 +4,7 @@
    <FileRef
       location = "group:ButterBroad.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:AnalogBroad/AnalogBroad/AnalogBroad.xcodeproj">
+   </FileRef>
 </Workspace>
