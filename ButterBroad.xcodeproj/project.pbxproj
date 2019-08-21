@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		861A7815229BBAE1008B6687 /* Butter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A7814229BBAE1008B6687 /* Butter.swift */; };
-		86F163942292548E003F734C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163922292548E003F734C /* Event.swift */; };
-		86F163952292548E003F734C /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163932292548E003F734C /* Analytics.swift */; };
-		86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16397229254A8003F734C /* StorageServiceProtocol.swift */; };
-		86F1639B229254A8003F734C /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16398229254A8003F734C /* UserDefaults+Storage.swift */; };
-		86F1639C229254A8003F734C /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16399229254A8003F734C /* ServiceFactory.swift */; };
+		013F44AA230D43E3000CBAEF /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A0230D43E3000CBAEF /* Analytics.swift */; };
+		013F44AB230D43E3000CBAEF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A1230D43E3000CBAEF /* Event.swift */; };
+		013F44AD230D43E3000CBAEF /* Butter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A3230D43E3000CBAEF /* Butter.swift */; };
+		013F44AE230D43E3000CBAEF /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A6230D43E3000CBAEF /* StorageServiceProtocol.swift */; };
+		013F44AF230D43E3000CBAEF /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A7230D43E3000CBAEF /* UserDefaults+Storage.swift */; };
+		013F44B1230D43E3000CBAEF /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F44A9230D43E3000CBAEF /* ServiceFactory.swift */; };
 		86F1640D22927648003F734C /* ButterBroadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1640C22927648003F734C /* ButterBroadTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,15 +27,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		861A77FD229BB133008B6687 /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		861A7814229BBAE1008B6687 /* Butter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Butter.swift; sourceTree = "<group>"; };
+		013F44A0230D43E3000CBAEF /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		013F44A1230D43E3000CBAEF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		013F44A3230D43E3000CBAEF /* Butter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Butter.swift; sourceTree = "<group>"; };
+		013F44A6230D43E3000CBAEF /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
+		013F44A7230D43E3000CBAEF /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
+		013F44A9230D43E3000CBAEF /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		013F44B2230D44F9000CBAEF /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1636B229253BD003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86F163922292548E003F734C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		86F163932292548E003F734C /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		86F16397229254A8003F734C /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
-		86F16398229254A8003F734C /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
-		86F16399229254A8003F734C /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		86F163FF229275CF003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F1640C22927648003F734C /* ButterBroadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButterBroadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,60 +58,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		060F083B1E4D6B3900D9166F = {
+		013F449E230D43E3000CBAEF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				86F1639F2292644E003F734C /* Sources */,
-				861A7814229BBAE1008B6687 /* Butter.swift */,
-				86F16369229253BD003F734C /* ButterBroad */,
-				86F163FC229275CF003F734C /* ButterBroadTests */,
-				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
-				861A77FD229BB133008B6687 /* ButterBroad.framework */,
+				013F449F230D43E3000CBAEF /* Models */,
+				013F44A4230D43E3000CBAEF /* Services */,
 			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		060F085F1E4D6C9200D9166F /* Services */ = {
+		013F449F230D43E3000CBAEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				86F16399229254A8003F734C /* ServiceFactory.swift */,
-				86F16396229254A8003F734C /* StorageService */,
+				013F44A0230D43E3000CBAEF /* Analytics.swift */,
+				013F44A3230D43E3000CBAEF /* Butter.swift */,
+				013F44A1230D43E3000CBAEF /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		013F44A4230D43E3000CBAEF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				013F44A5230D43E3000CBAEF /* StorageService */,
+				013F44A9230D43E3000CBAEF /* ServiceFactory.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		060F08761E4D6CDF00D9166F /* Models */ = {
+		013F44A5230D43E3000CBAEF /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
-				86F163932292548E003F734C /* Analytics.swift */,
-				86F163922292548E003F734C /* Event.swift */,
+				013F44A6230D43E3000CBAEF /* StorageServiceProtocol.swift */,
+				013F44A7230D43E3000CBAEF /* UserDefaults+Storage.swift */,
 			);
-			path = Models;
+			path = StorageService;
+			sourceTree = "<group>";
+		};
+		060F083B1E4D6B3900D9166F = {
+			isa = PBXGroup;
+			children = (
+				86F16369229253BD003F734C /* ButterBroad */,
+				86F163FC229275CF003F734C /* ButterBroadTests */,
+				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
+				013F44B2230D44F9000CBAEF /* ButterBroad.framework */,
+			);
 			sourceTree = "<group>";
 		};
 		86F16369229253BD003F734C /* ButterBroad */ = {
 			isa = PBXGroup;
 			children = (
+				013F449E230D43E3000CBAEF /* Classes */,
 				86F1636B229253BD003F734C /* Info.plist */,
 			);
 			path = ButterBroad;
-			sourceTree = "<group>";
-		};
-		86F16396229254A8003F734C /* StorageService */ = {
-			isa = PBXGroup;
-			children = (
-				86F16397229254A8003F734C /* StorageServiceProtocol.swift */,
-				86F16398229254A8003F734C /* UserDefaults+Storage.swift */,
-			);
-			path = StorageService;
-			sourceTree = "<group>";
-		};
-		86F1639F2292644E003F734C /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				060F08761E4D6CDF00D9166F /* Models */,
-				060F085F1E4D6C9200D9166F /* Services */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		86F163FC229275CF003F734C /* ButterBroadTests */ = {
@@ -152,7 +152,7 @@
 			);
 			name = ButterBroad;
 			productName = ButterBroad;
-			productReference = 861A77FD229BB133008B6687 /* ButterBroad.framework */;
+			productReference = 013F44B2230D44F9000CBAEF /* ButterBroad.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		86F163FA229275CF003F734C /* ButterBroadTests */ = {
@@ -261,12 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861A7815229BBAE1008B6687 /* Butter.swift in Sources */,
-				86F1639B229254A8003F734C /* UserDefaults+Storage.swift in Sources */,
-				86F1639C229254A8003F734C /* ServiceFactory.swift in Sources */,
-				86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */,
-				86F163952292548E003F734C /* Analytics.swift in Sources */,
-				86F163942292548E003F734C /* Event.swift in Sources */,
+				013F44AB230D43E3000CBAEF /* Event.swift in Sources */,
+				013F44AD230D43E3000CBAEF /* Butter.swift in Sources */,
+				013F44B1230D43E3000CBAEF /* ServiceFactory.swift in Sources */,
+				013F44AA230D43E3000CBAEF /* Analytics.swift in Sources */,
+				013F44AE230D43E3000CBAEF /* StorageServiceProtocol.swift in Sources */,
+				013F44AF230D43E3000CBAEF /* UserDefaults+Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +800,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -878,7 +878,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -956,7 +956,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1028,7 +1028,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1100,7 +1100,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1171,7 +1171,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1242,7 +1242,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1313,7 +1313,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ButterBroad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1333,6 +1333,7 @@
 		86F16404229275CF003F734C /* Debug Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1402,6 +1403,7 @@
 		86F16405229275CF003F734C /* Debug Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1471,6 +1473,7 @@
 		86F16406229275CF003F734C /* Debug Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1540,6 +1543,7 @@
 		86F16407229275CF003F734C /* Analyze */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1603,6 +1607,7 @@
 		86F16408229275CF003F734C /* AdHoc Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1665,6 +1670,7 @@
 		86F16409229275CF003F734C /* AdHoc Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1727,6 +1733,7 @@
 		86F1640A229275CF003F734C /* AdHoc Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1789,6 +1796,7 @@
 		86F1640B229275CF003F734C /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
