@@ -91,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				0166D43E22FBFC0700EC7FF4 /* AnalogBroad */,
+				013F44B3230D463E000CBAEF /* Classes */,
 				0166D44922FBFC0700EC7FF4 /* AnalogBroadTests */,
 				0166D43D22FBFC0700EC7FF4 /* Products */,
 				01432C0022FBFC6300740248 /* Frameworks */,
@@ -109,7 +110,6 @@
 		0166D43E22FBFC0700EC7FF4 /* AnalogBroad */ = {
 			isa = PBXGroup;
 			children = (
-				013F44B3230D463E000CBAEF /* Classes */,
 				015A89D2230D5B49002600FF /* Cartfile */,
 				0166D44022FBFC0700EC7FF4 /* Info.plist */,
 			);
