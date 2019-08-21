@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AnalogBroad.xcodeproj">
+      location = "group:ButterBroad.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ButterBroad.xcodeproj">
+      location = "group:AnalogBroad/AnalogBroad.xcodeproj">
    </FileRef>
 </Workspace>

@@ -5,6 +5,6 @@
       location = "group:AnalogBroad.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:AnalogBroad/AnalogBroadExample/AnalogBroadExample.xcodeproj">
+      location = "group:AnalogBroadExample/AnalogBroadExample.xcodeproj">
    </FileRef>
 </Workspace>
