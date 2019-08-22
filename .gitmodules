@@ -1,3 +1,6 @@
 [submodule "AnalogBroad"]
 	path = AnalogBroad
 	url = https://github.com/ntunin/AnalogBroad.git
+[submodule "FaceBookBroad"]
+	path = FaceBookBroad
+	url = https://github.com/ntunin/FaceBookBroad.git
