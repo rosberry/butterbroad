@@ -290,8 +290,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/AnalogBroad/Carthage/Build/iOS/Analog.framework",
-				"$(SRCROOT)/AnalogBroad/Carthage/Build/iOS/ButterBroad.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Analog.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ButterBroad.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

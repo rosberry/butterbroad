@@ -1,0 +1,3 @@
+[submodule "AnalogBroad"]
+	path = AnalogBroad
+	url = https://github.com/ntunin/AnalogBroad.git
