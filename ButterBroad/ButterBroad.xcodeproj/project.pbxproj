@@ -13,18 +13,8 @@
 		015A8A14230E3EBF002600FF /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015A8A0C230E3EBF002600FF /* StorageServiceProtocol.swift */; };
 		015A8A15230E3EBF002600FF /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015A8A0D230E3EBF002600FF /* UserDefaults+Storage.swift */; };
 		015A8A17230E3EBF002600FF /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015A8A0F230E3EBF002600FF /* ServiceFactory.swift */; };
-		86F1640D22927648003F734C /* ButterBroadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1640C22927648003F734C /* ButterBroadTests.swift */; };
+		015A8A20230E43FE002600FF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 015A8A1F230E43FE002600FF /* Cartfile */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		86F16401229275CF003F734C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 060F083C1E4D6B3900D9166F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 86F16367229253BC003F734C;
-			remoteInfo = ButterBroad;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		013F44B2230D44F9000CBAEF /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +27,7 @@
 		015A8A0D230E3EBF002600FF /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		015A8A0F230E3EBF002600FF /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		015A8A18230E3F89002600FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		015A8A1F230E43FE002600FF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F163FF229275CF003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F1640C22927648003F734C /* ButterBroadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButterBroadTests.swift; sourceTree = "<group>"; };
@@ -47,8 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015A89FE230D665F002600FF /* ButterBroad.framework in Frameworks */,
-				015A89FF230D665F002600FF /* Analog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,43 +112,10 @@
 			path = StorageService;
 			sourceTree = "<group>";
 		};
-		015A89DE230D605A002600FF /* AnalogBroad */ = {
-			isa = PBXGroup;
-			children = (
-				015A89F7230D663E002600FF /* Classes */,
-				015A89E0230D605A002600FF /* Info.plist */,
-			);
-			path = AnalogBroad;
-			sourceTree = "<group>";
-		};
-		015A89F7230D663E002600FF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				015A89F8230D663E002600FF /* Models */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		015A89F8230D663E002600FF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				015A89F9230D663E002600FF /* AnalogBroad.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		015A89FB230D665F002600FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				015A89FD230D665F002600FF /* Analog.framework */,
-				015A89FC230D665F002600FF /* ButterBroad.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		060F083B1E4D6B3900D9166F = {
 			isa = PBXGroup;
 			children = (
+				015A8A1F230E43FE002600FF /* Cartfile */,
 				015A8A04230E3EBF002600FF /* Classes */,
 				015A8A03230E3EA4002600FF /* ButterBroad */,
 				86F163FC229275CF003F734C /* ButterBroadTests */,
@@ -203,7 +159,6 @@
 			buildConfigurationList = 015A89EA230D605A002600FF /* Build configuration list for PBXNativeTarget "AnalogBroad" */;
 			buildPhases = (
 				015A89D8230D6059002600FF /* Headers */,
-				015A89D9230D6059002600FF /* Sources */,
 				015A89DA230D6059002600FF /* Frameworks */,
 				015A89DB230D6059002600FF /* Resources */,
 				015A8A00230D6674002600FF /* Carthage */,
@@ -214,7 +169,6 @@
 			);
 			name = AnalogBroad;
 			productName = AnalogBroad;
-			productReference = 015A89DD230D6059002600FF /* AnalogBroad.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		86F16367229253BC003F734C /* ButterBroad */ = {
@@ -240,14 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86F16403229275CF003F734C /* Build configuration list for PBXNativeTarget "ButterBroadTests" */;
 			buildPhases = (
-				86F163F7229275CF003F734C /* Sources */,
 				86F163F8229275CF003F734C /* Frameworks */,
 				86F163F9229275CF003F734C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				86F16402229275CF003F734C /* PBXTargetDependency */,
 			);
 			name = ButterBroadTests;
 			productName = ButterBroadTests;
@@ -316,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				015A8A20230E43FE002600FF /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +339,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
 		015A89E8230D605A002600FF /* AdHoc Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -535,6 +491,48 @@
 				_ = "";
 			};
 			name = AppStore;
+		};
+		015A8A19230E43F1002600FF /* Debug Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = "Debug Development";
+		};
+		015A8A1A230E43F1002600FF /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = "Debug Staging";
+		};
+		015A8A1B230E43F1002600FF /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = "Debug Production";
+		};
+		015A8A1C230E43F1002600FF /* Analyze */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = Analyze;
+		};
+		015A8A1D230E43F1002600FF /* AdHoc Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = "AdHoc Development";
+		};
+		015A8A1E230E43F1002600FF /* AdHoc Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnalogBroad;
+			};
+			name = "AdHoc Staging";
 		};
 		060F08541E4D6B3900D9166F /* Debug Development */ = {
 			isa = XCBuildConfiguration;
@@ -2109,14 +2107,14 @@
 		015A89EA230D605A002600FF /* Build configuration list for PBXNativeTarget "AnalogBroad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				015A89E2230D605A002600FF /* Debug Development */,
-				015A89E3230D605A002600FF /* Debug Staging */,
-				015A89E4230D605A002600FF /* Debug Production */,
-				015A89E5230D605A002600FF /* Analyze */,
-				015A89E6230D605A002600FF /* AdHoc Development */,
-				015A89E7230D605A002600FF /* AdHoc Staging */,
 				015A89E8230D605A002600FF /* AdHoc Production */,
 				015A89E9230D605A002600FF /* AppStore */,
+				015A8A19230E43F1002600FF /* Debug Development */,
+				015A8A1A230E43F1002600FF /* Debug Staging */,
+				015A8A1B230E43F1002600FF /* Debug Production */,
+				015A8A1C230E43F1002600FF /* Analyze */,
+				015A8A1D230E43F1002600FF /* AdHoc Development */,
+				015A8A1E230E43F1002600FF /* AdHoc Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Debug Development";
