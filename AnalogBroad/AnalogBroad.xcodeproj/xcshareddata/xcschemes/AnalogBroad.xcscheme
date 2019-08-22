@@ -14,26 +14,45 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "015A89DC230D6059002600FF"
+               BlueprintIdentifier = "0166D43B22FBFC0700EC7FF4"
                BuildableName = "AnalogBroad.framework"
                BlueprintName = "AnalogBroad"
-               ReferencedContainer = "container:ButterBroad.xcodeproj">
+               ReferencedContainer = "container:AnalogBroad.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug Development"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0166D44422FBFC0700EC7FF4"
+               BuildableName = "AnalogBroadTests.xctest"
+               BlueprintName = "AnalogBroadTests"
+               ReferencedContainer = "container:AnalogBroad.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0166D43B22FBFC0700EC7FF4"
+            BuildableName = "AnalogBroad.framework"
+            BlueprintName = "AnalogBroad"
+            ReferencedContainer = "container:AnalogBroad.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug Development"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,17 +64,17 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "015A89DC230D6059002600FF"
+            BlueprintIdentifier = "0166D43B22FBFC0700EC7FF4"
             BuildableName = "AnalogBroad.framework"
             BlueprintName = "AnalogBroad"
-            ReferencedContainer = "container:ButterBroad.xcodeproj">
+            ReferencedContainer = "container:AnalogBroad.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug Development"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -63,18 +82,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "015A89DC230D6059002600FF"
+            BlueprintIdentifier = "0166D43B22FBFC0700EC7FF4"
             BuildableName = "AnalogBroad.framework"
             BlueprintName = "AnalogBroad"
-            ReferencedContainer = "container:ButterBroad.xcodeproj">
+            ReferencedContainer = "container:AnalogBroad.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug Development">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug Development"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
