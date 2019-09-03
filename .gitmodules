@@ -4,3 +4,6 @@
 [submodule "FaceBookBroad"]
 	path = FaceBookBroad
 	url = https://github.com/ntunin/FaceBookBroad.git
+[submodule "CrashlyticsBroad"]
+	path = CrashlyticsBroad
+	url = https://github.com/ntunin/CrashlyticsBroad.git
