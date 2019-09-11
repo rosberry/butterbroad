@@ -8,9 +8,9 @@ import Foundation
 
 public final class Butter: Analytics {
 
+    public var requestDelay = 0.25
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
-    private let requestDelay = 0.25
     private let broads: [Analytics]
 
     // MARK: - Lifecycle
@@ -22,6 +22,11 @@ public final class Butter: Analytics {
 
     public init(broads: Analytics...) {
         self.broads = broads
+    }
+    
+    deinit {
+        eventsQueueTimer?.invalidate()
+        eventsQueueTimer = nil
     }
 
     /// Sends the event to the list of provided analytics plugins
@@ -58,7 +63,7 @@ public final class Butter: Analytics {
             eventsQueueTimer = nil
             return
         }
-        let event = dependencies.storageService.events.remove(at: 0)
+        let event = dependencies.storageService.events.removeFirst()
         logToBroads(event)
     }
 
@@ -66,10 +71,5 @@ public final class Butter: Analytics {
         broads.forEach { broad in
             broad.log(event)
         }
-    }
-    
-    deinit {
-        eventsQueueTimer?.invalidate()
-        eventsQueueTimer = nil
     }
 }

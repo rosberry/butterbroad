@@ -4,7 +4,7 @@
 //  Copyright © 2019 Rosberry. All rights reserved.
 //
 
-/// protocool-adapter that provides an ability to send events to some analytics service
+/// protocol-adapter that provides an ability to send events to some analytics service
 
 public protocol Analytics {
     /// Sends the event instance to the analytics service
