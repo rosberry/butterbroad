@@ -6,7 +6,7 @@
 
 import Foundation
 
-// Struct for an event instanse that provides basic information that can be sent
+// Struct for an event instance that provides basic information that can be sent
 // to the analytics service
 
 public struct Event: Codable {

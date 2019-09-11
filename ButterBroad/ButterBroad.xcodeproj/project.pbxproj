@@ -61,8 +61,11 @@
 		015A89FB230D665F002600FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				015A89FD230D665F002600FF /* Analog.framework */,
-				015A89FC230D665F002600FF /* ButterBroad.framework */,
+				86F1639F2292644E003F734C /* Sources */,
+				86F16369229253BD003F734C /* ButterBroad */,
+				86F163FC229275CF003F734C /* ButterBroadTests */,
+				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
+				861A77FD229BB133008B6687 /* ButterBroad.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,9 +90,9 @@
 		015A8A05230E3EBF002600FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				015A8A06230E3EBF002600FF /* Analytics.swift */,
-				015A8A07230E3EBF002600FF /* Event.swift */,
-				015A8A09230E3EBF002600FF /* Butter.swift */,
+				861A7814229BBAE1008B6687 /* Butter.swift */,
+				86F163932292548E003F734C /* Analytics.swift */,
+				86F163922292548E003F734C /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
