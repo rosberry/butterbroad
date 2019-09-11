@@ -24,4 +24,6 @@
 - [ ] Retain cycles were checked
 - [ ] Has no force unwraps
 - [ ] Access control words were checked
-- [ ] Checked that the app correctly handles `background` and `foreground` states
+- [ ] All tests passed succesfully
+- [ ] All example projects runs and hadle all events correctly
+- [ ] Checked that the code correctly handles `background` and `foreground` states
