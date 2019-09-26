@@ -3,6 +3,7 @@
 //
 
 import XCTest
+import AnyCodable
 @testable import ButterBroad
 
 final class ButterBroadTests: XCTestCase {
@@ -56,7 +57,7 @@ final class ButterBroadTests: XCTestCase {
         let butterbroad = Butter(broads: mockedAnalytics)
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.log(Event(name: "test_event", params: ["param_1": .string("test")]))
+        butterbroad.log(Event(name: "test_event", params: ["param_1": "test"]))
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -72,7 +73,7 @@ final class ButterBroadTests: XCTestCase {
         let butterbroad = Butter(broads: mockedAnalytics)
 
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(with: "test_event", params: ["param_1": .string("test")])
+        butterbroad.logEvent(with: "test_event", params: ["param_1": "test"])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -88,7 +89,7 @@ final class ButterBroadTests: XCTestCase {
         let butterbroad = Butter(broads: mockedAnalytics)
         
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(with: "test_event", params: ["param_1": .int(10)])
+        butterbroad.logEvent(with: "test_event", params: ["param_1": 10])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -104,7 +105,7 @@ final class ButterBroadTests: XCTestCase {
         let butterbroad = Butter(broads: mockedAnalytics)
         
         let expectation = self.expectation(description: "Event Sending")
-        butterbroad.logEvent(with: "test_event", params: ["param_1": .float(0.12345)])
+        butterbroad.logEvent(with: "test_event", params: ["param_1": 0.12345])
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             expectation.fulfill()
@@ -125,31 +126,10 @@ final class ButterBroadTests: XCTestCase {
         return event
     }
     
-    private func assertParam(_ param: Param?, value: Any, message: String) {
-        guard let param = param else {
+    private func assertParam(_ param: AnyCodable?, value: AnyCodable, message: String) {
+        guard let param = param, param == value else {
             XCTAssert(false, message)
             return
-        }
-        switch param {
-        case .string(let string):
-            guard let value = value as? String, value == string else {
-                return XCTAssert(false, message)
-            }
-        case .int(let int):
-            guard let value = value as? Int, value == int else {
-                return XCTAssert(false, message)
-            }
-        case .float(let float):
-            var controlValue: Float?
-            if let double = value as? Double {
-                controlValue = Float(double)
-            }
-            else {
-                controlValue = value as? Float
-            }
-            guard let value = controlValue, abs(value - float) < 1e-6 else {
-                return XCTAssert(false, message)
-            }
         }
     }
 }

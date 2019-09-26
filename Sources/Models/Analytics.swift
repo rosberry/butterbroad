@@ -6,6 +6,8 @@
 
 /// protocol-adapter that provides an ability to send events to some analytics service
 
+import AnyCodable
+
 public protocol Analytics {
     /// Sends the event instance to the analytics service
     ///
@@ -18,12 +20,12 @@ public protocol Analytics {
     /// - Parameters:
     ///    - name: the name of event that should be sent to the analytics service
     ///    - params: the dictionary of event params that should be sent to the analytics service
-    func logEvent(with name: String, params: [String: Param])
+    func logEvent(with name: String, params: [String: AnyCodable])
 }
 
 extension Analytics {
 
-    public func logEvent(with name: String, params: [String: Param] = [:]) {
+    public func logEvent(with name: String, params: [String: AnyCodable] = [:]) {
         log(Event(name: name, params: params))
     }
 }
