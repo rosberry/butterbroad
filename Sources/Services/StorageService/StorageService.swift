@@ -42,10 +42,10 @@ final class StorageService: StorageServiceProtocol {
 
     
     private func storageURL() -> URL? {
-        return getDirectory()?.appendingPathComponent("__analytics.tmp")
+        return storageDirectoryURL()?.appendingPathComponent("__analytics.tmp")
     }
     
-    private func getDirectory() -> URL? {
+    private func storageDirectoryURL() -> URL? {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 }
