@@ -18,9 +18,7 @@ final class StorageService: StorageServiceProtocol {
             save(newValue)
         }
     }
-    
 
-    
     // MARK: - Private
 
     private func load() -> [Event] {
@@ -31,7 +29,7 @@ final class StorageService: StorageServiceProtocol {
         try? FileManager.default.removeItem(at: url)
         return events
     }
-    
+
     private func save(_ events: [Event]) {
         _events = events
         guard let url = storageURL() else {
@@ -40,11 +38,10 @@ final class StorageService: StorageServiceProtocol {
         (events as NSArray).write(to: url, atomically: true)
     }
 
-    
     private func storageURL() -> URL? {
         return storageDirectoryURL()?.appendingPathComponent("__analytics.tmp")
     }
-    
+
     private func storageDirectoryURL() -> URL? {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
