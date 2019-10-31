@@ -15,103 +15,92 @@ final class ButterBroadTests: XCTestCase {
             events.append(event)
         }
     }
+    
+    var analytics: MockedAnalytics!
+    var butterbroad: Butter!
+    var date: Date!
+    var expectation: XCTestExpectation!
+    
+    override func setUp() {
+        super.setUp()
+        analytics = MockedAnalytics()
+        butterbroad = Butter(broads: analytics)
+        date = Date()
+        expectation = self.expectation(description: "Event Sending")
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        analytics = nil
+        butterbroad = nil
+        date = nil
+        expectation = nil
+    }
 
     func testLogEvent() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-        let date = Date()
-
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.log(Event(name: "test_event"))
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
         XCTAssert(date.timeIntervalSince(event.date) < 0.1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithName() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-        let date = Date()
-
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.logEvent(with: "test_event")
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
         XCTAssert(date.timeIntervalSince(event.date) < 0.1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithParam() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.log(Event(name: "test_event", params: ["param_1": "test"]))
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(!event.params.isEmpty, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
     }
 
     func testLogEventWithNameAndParam() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.logEvent(with: "test_event", params: ["param_1": "test"])
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
     }
     
     func testLogEventWithNameAndIntParam() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-        
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.logEvent(with: "test_event", params: ["param_1": 10])
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 10, message: "Expected 'param_1' = 10")
     }
     
     func testLogEventWithNameAndFloatParam() {
-        let mockedAnalytics = MockedAnalytics()
-        let butterbroad = Butter(broads: mockedAnalytics)
-        
-        let expectation = self.expectation(description: "Event Sending")
         butterbroad.logEvent(with: "test_event", params: ["param_1": 0.12345])
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            expectation.fulfill()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
-        let event = first(in: mockedAnalytics)
+        let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 0.12345, message: "Expected 'param_1' = 0.12345")
     }
