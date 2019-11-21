@@ -7,9 +7,9 @@
 import Foundation
 
 final class StorageService: StorageServiceProtocol {
-    
+
     private var _events: [Event] = []
-    
+
     var events: [Event] {
         get {
             return load()

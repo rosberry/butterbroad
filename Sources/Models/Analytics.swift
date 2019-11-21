@@ -4,10 +4,9 @@
 //  Copyright © 2019 Rosberry. All rights reserved.
 //
 
-/// protocol-adapter that provides an ability to send events to some analytics service
-
 import AnyCodable
 
+/// protocol-adapter that provides an ability to send events to some analytics service
 public protocol Analytics {
     /// Sends the event instance to the analytics service
     ///

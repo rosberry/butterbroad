@@ -23,7 +23,7 @@ public final class Butter: Analytics {
     public init(broads: Analytics...) {
         self.broads = broads
     }
-    
+
     deinit {
         eventsQueueTimer?.invalidate()
         eventsQueueTimer = nil

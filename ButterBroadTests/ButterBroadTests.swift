@@ -15,12 +15,12 @@ final class ButterBroadTests: XCTestCase {
             events.append(event)
         }
     }
-    
+
     var analytics: MockedAnalytics!
     var butterbroad: Butter!
     var date: Date!
     var expectation: XCTestExpectation!
-    
+
     override func setUp() {
         super.setUp()
         analytics = MockedAnalytics()
@@ -28,7 +28,7 @@ final class ButterBroadTests: XCTestCase {
         date = Date()
         expectation = self.expectation(description: "Event Sending")
     }
-    
+
     override func tearDown() {
         super.tearDown()
         analytics = nil
@@ -82,7 +82,7 @@ final class ButterBroadTests: XCTestCase {
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
     }
-    
+
     func testLogEventWithNameAndIntParam() {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 10])
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -93,7 +93,7 @@ final class ButterBroadTests: XCTestCase {
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 10, message: "Expected 'param_1' = 10")
     }
-    
+
     func testLogEventWithNameAndFloatParam() {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 0.12345])
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -104,9 +104,9 @@ final class ButterBroadTests: XCTestCase {
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 0.12345, message: "Expected 'param_1' = 0.12345")
     }
-    
+
     // MARK: - Private
-    
+
     private func first(in analytics: MockedAnalytics) -> Event {
         guard let event = analytics.events.first else {
             XCTAssert(false, "Event should be logged")
@@ -114,7 +114,7 @@ final class ButterBroadTests: XCTestCase {
         }
         return event
     }
-    
+
     private func assertParam(_ param: AnyCodable?, value: AnyCodable, message: String) {
         guard let param = param, param == value else {
             XCTAssert(false, message)
