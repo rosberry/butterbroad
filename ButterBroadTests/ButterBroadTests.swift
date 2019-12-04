@@ -26,7 +26,12 @@ final class ButterBroadTests: XCTestCase {
         analytics = MockedAnalytics()
         butterbroad = Butter(broads: analytics)
         date = Date()
-        expectation = self.expectation(description: "Event Sending")
+        expectation = self.expectation(for: NSPredicate(block: { analytics, _ in
+            guard let analytics = analytics as? MockedAnalytics, analytics.events.count > 0 else {
+                return false
+            }
+            return true
+        }), evaluatedWith: analytics, handler: nil)
     }
 
     override func tearDown() {
@@ -39,10 +44,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEvent() {
         butterbroad.log(Event(name: "test_event"))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
@@ -51,10 +53,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEventWithName() {
         butterbroad.logEvent(with: "test_event")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
@@ -63,10 +62,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEventWithParam() {
         butterbroad.log(Event(name: "test_event", params: ["param_1": "test"]))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(!event.params.isEmpty, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
@@ -74,10 +70,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEventWithNameAndParam() {
         butterbroad.logEvent(with: "test_event", params: ["param_1": "test"])
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
@@ -85,10 +78,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEventWithNameAndIntParam() {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 10])
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 10, message: "Expected 'param_1' = 10")
@@ -96,10 +86,7 @@ final class ButterBroadTests: XCTestCase {
 
     func testLogEventWithNameAndFloatParam() {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 0.12345])
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
         XCTAssert(event.params.count == 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 0.12345, message: "Expected 'param_1' = 0.12345")
