@@ -1,6 +1,6 @@
 # ButterBroad
 
-ButterBroad is a lightweight agregator for different analytic components such as Facebook, Firebase, Crashlytics e.t.c.
+ButterBroad is a lightweight aggregator for different analytic components such as Facebook, Firebase, Crashlytics e.t.c.
 
 ## Features
 - Combines different analytics components
@@ -8,7 +8,7 @@ ButterBroad is a lightweight agregator for different analytic components such as
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 10.0+
 - Xcode 8.0+
 
 ## Installation
@@ -22,7 +22,7 @@ github "rosberry/ButterBroad"
 
 ## Usage
 - Provide an adapter for analytic component by the implementing of  `Analytics` protocol
-- Combine adapters using an instance of  `Butter`  class
+- Combine adapters using an instance of `Butter` class
 ```swift
 import ButterBroad
 
@@ -46,4 +46,4 @@ Check out our [open source projects](https://github.com/rosberry), read [our blo
 
 ## License
 
-Product Name is available under the MIT license. See the LICENSE file for more info.
+Butterbroad is available under the MIT license. See the LICENSE file for more info.

@@ -48,7 +48,7 @@ final class ButterBroadTests: XCTestCase {
         let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
-        XCTAssert(date.timeIntervalSince(event.date) < 0.1, "Event date should be nearly match with sending time")
+        XCTAssert(date.timeIntervalSince(event.date) < 1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithName() {
@@ -57,7 +57,7 @@ final class ButterBroadTests: XCTestCase {
         let event = first(in: analytics)
         XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
         XCTAssert(event.params.isEmpty, "Params not expected")
-        XCTAssert(date.timeIntervalSince(event.date) < 0.1, "Event date should be nearly match with sending time")
+        XCTAssert(date.timeIntervalSince(event.date) < 1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithParam() {

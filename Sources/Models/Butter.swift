@@ -4,7 +4,7 @@
 //  Copyright © 2019 Rosberry. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public final class Butter: Analytics {
 
@@ -12,6 +12,7 @@ public final class Butter: Analytics {
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
     private let broads: [Analytics]
+    private var queue: [Event] = []
 
     // MARK: - Lifecycle
 
@@ -20,13 +21,28 @@ public final class Butter: Analytics {
     /// - Parameters:
     ///    - broads: list of initialized analytics plugins
 
-    public init(broads: Analytics...) {
+    public convenience init(broads: Analytics...) {
+        self.init(broads: broads)
+    }
+
+    /// ButterBroad initializer that creates an instance with list of provided analytics plugins (broads)
+    ///
+    /// - Parameters:
+    ///    - broads: array of initialized analytics plugins
+
+    public init(broads: [Analytics]) {
         self.broads = broads
+        self.queue = dependencies.storageService.events
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applicationWillTerminate),
+                                               name: UIApplication.willTerminateNotification,
+                                               object: nil)
     }
 
     deinit {
         eventsQueueTimer?.invalidate()
         eventsQueueTimer = nil
+        NotificationCenter.default.removeObserver(self)
     }
 
     /// Sends the event to the list of provided analytics plugins
@@ -46,7 +62,7 @@ public final class Butter: Analytics {
     // MARK: - Private
 
     private func putIntoQueue(_ event: Event) {
-        dependencies.storageService.events.append(event)
+        queue.append(event)
         if eventsQueueTimer != nil {
             return
         }
@@ -63,8 +79,12 @@ public final class Butter: Analytics {
             eventsQueueTimer = nil
             return
         }
-        let event = dependencies.storageService.events.removeFirst()
+        let event = queue.removeFirst()
         logToBroads(event)
+    }
+
+    @objc private func applicationWillTerminate() {
+        dependencies.storageService.events = queue
     }
 
     private func logToBroads(_ event: Event) {
