@@ -15,8 +15,12 @@ final class StorageService: StorageServiceProtocol {
             return load()
         }
         set {
-            save(newValue)
+            _events = newValue
         }
+    }
+
+    public func save() {
+        save(_events)
     }
 
     // MARK: - Private

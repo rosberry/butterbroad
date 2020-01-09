@@ -12,7 +12,15 @@ public final class Butter: Analytics {
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
     private let broads: [Analytics]
-    private var queue: [Event] = []
+
+    private var queue: [Event] {
+        get {
+            dependencies.storageService.events
+        }
+        set {
+            dependencies.storageService.events = newValue
+        }
+    }
 
     // MARK: - Lifecycle
 
@@ -32,16 +40,25 @@ public final class Butter: Analytics {
 
     public init(broads: [Analytics]) {
         self.broads = broads
-        self.queue = dependencies.storageService.events
+        NSSetUncaughtExceptionHandler { _ in
+            Services.storageService.save()
+        }
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(applicationWillTerminate),
+                                               selector: #selector(prepareForBackground),
                                                name: UIApplication.willTerminateNotification,
                                                object: nil)
+       NotificationCenter.default.addObserver(self,
+                                              selector: #selector(prepareForBackground),
+                                              name: UIApplication.didEnterBackgroundNotification,
+                                              object: nil)
+      NotificationCenter.default.addObserver(self,
+                                             selector: #selector(prepareForForeground),
+                                             name: UIApplication.willEnterForegroundNotification,
+                                             object: nil)
     }
 
     deinit {
-        eventsQueueTimer?.invalidate()
-        eventsQueueTimer = nil
+        stopSending()
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -63,14 +80,7 @@ public final class Butter: Analytics {
 
     private func putIntoQueue(_ event: Event) {
         queue.append(event)
-        if eventsQueueTimer != nil {
-            return
-        }
-        eventsQueueTimer = Timer.scheduledTimer(timeInterval: requestDelay,
-                                                target: self,
-                                                selector: #selector(handleEventsQueue),
-                                                userInfo: nil,
-                                                repeats: true)
+        startSending()
     }
 
     @objc private func handleEventsQueue() {
@@ -83,13 +93,34 @@ public final class Butter: Analytics {
         logToBroads(event)
     }
 
-    @objc private func applicationWillTerminate() {
-        dependencies.storageService.events = queue
+    @objc private func prepareForBackground() {
+        stopSending()
+        dependencies.storageService.save()
+    }
+
+    @objc private func prepareForForeground() {
+        startSending()
     }
 
     private func logToBroads(_ event: Event) {
         broads.forEach { broad in
             broad.log(event)
         }
+    }
+
+    private func startSending() {
+        if eventsQueueTimer != nil {
+            return
+        }
+        eventsQueueTimer = Timer.scheduledTimer(timeInterval: requestDelay,
+                                                target: self,
+                                                selector: #selector(handleEventsQueue),
+                                                userInfo: nil,
+                                                repeats: true)
+    }
+
+    private func stopSending() {
+        eventsQueueTimer?.invalidate()
+        eventsQueueTimer = nil
     }
 }

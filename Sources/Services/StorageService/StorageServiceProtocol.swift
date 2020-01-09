@@ -10,4 +10,5 @@ protocol HasStorageService {
 
 protocol StorageServiceProtocol: class {
     var events: [Event] { get set }
+    func save()
 }
