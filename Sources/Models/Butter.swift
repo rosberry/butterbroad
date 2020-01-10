@@ -9,6 +9,7 @@ import UIKit
 public final class Butter: Analytics {
 
     public var requestDelay = 0.25
+    public var activationHandler: (() -> Void)?
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
     private let broads: [Analytics]
@@ -40,21 +41,31 @@ public final class Butter: Analytics {
 
     public init(broads: [Analytics]) {
         self.broads = broads
-        NSSetUncaughtExceptionHandler { _ in
-            Services.storageService.save()
-        }
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(prepareForBackground),
-                                               name: UIApplication.willTerminateNotification,
+        activationHandler = { [weak self] in
+            guard let self = self else {
+                return
+            }
+            NSSetUncaughtExceptionHandler { _ in
+                Services.storageService.save() // Context is unavailable here, could not use dependencies
+            }
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(self.prepareForBackground),
+                                                 name: UIApplication.willTerminateNotification,
+                                                 object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                selector: #selector(self.prepareForBackground),
+                                                name: UIApplication.didEnterBackgroundNotification,
+                                                object: nil)
+            NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.prepareForForeground),
+                                               name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
-       NotificationCenter.default.addObserver(self,
-                                              selector: #selector(prepareForBackground),
-                                              name: UIApplication.didEnterBackgroundNotification,
-                                              object: nil)
-      NotificationCenter.default.addObserver(self,
-                                             selector: #selector(prepareForForeground),
-                                             name: UIApplication.willEnterForegroundNotification,
-                                             object: nil)
+            self.handleEventsQueue() // Check queue from last session
+
+            self.broads.forEach { broad in
+                broad.activationHandler?()
+            }
+        }
     }
 
     deinit {
@@ -66,8 +77,6 @@ public final class Butter: Analytics {
     ///
     /// Note that butterbroad does not send an event immediately
     /// Instead of that it await `requestDelay` and sends all awaiting events
-    /// All events cached to the device storage to make sure that all of them
-    /// will be sent if app could not send them at the time by some reason (killed, crashed, etc.)
     ///
     /// - Parameters:
     ///    - event: the event that should be sent to the list of analytics plugins

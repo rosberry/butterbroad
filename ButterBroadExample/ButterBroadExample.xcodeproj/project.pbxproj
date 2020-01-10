@@ -15,48 +15,28 @@
 		01740E6923C6F55F003299B2 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 01740E6823C6F55F003299B2 /* Cartfile */; };
 		01740E6B23C6F606003299B2 /* Butter+ApplicationBroads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01740E6A23C6F606003299B2 /* Butter+ApplicationBroads.swift */; };
 		01740E7B23C6F8F4003299B2 /* AnalogBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7123C6F8F4003299B2 /* AnalogBroad.framework */; };
-		01740E7C23C6F8F4003299B2 /* AnalogBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7123C6F8F4003299B2 /* AnalogBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E7D23C6F8F4003299B2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */; };
-		01740E7E23C6F8F4003299B2 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E7F23C6F8F4003299B2 /* Analog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7323C6F8F4003299B2 /* Analog.framework */; };
-		01740E8023C6F8F4003299B2 /* Analog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7323C6F8F4003299B2 /* Analog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8123C6F8F4003299B2 /* FaceBookBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */; };
-		01740E8223C6F8F4003299B2 /* FaceBookBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8323C6F8F4003299B2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7523C6F8F4003299B2 /* Crashlytics.framework */; };
-		01740E8423C6F8F4003299B2 /* Crashlytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7523C6F8F4003299B2 /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		01740E8523C6F8F4003299B2 /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7623C6F8F4003299B2 /* ButterBroad.framework */; };
-		01740E8623C6F8F4003299B2 /* ButterBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7623C6F8F4003299B2 /* ButterBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7723C6F8F4003299B2 /* AnyCodable.framework */; };
-		01740E8823C6F8F4003299B2 /* AnyCodable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7723C6F8F4003299B2 /* AnyCodable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8923C6F8F4003299B2 /* CrashlyticsBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */; };
-		01740E8A23C6F8F4003299B2 /* CrashlyticsBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8B23C6F8F4003299B2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7923C6F8F4003299B2 /* Fabric.framework */; };
-		01740E8C23C6F8F4003299B2 /* Fabric.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7923C6F8F4003299B2 /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E8D23C6F8F4003299B2 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7A23C6F8F4003299B2 /* Firebase.framework */; };
-		01740E8E23C6F8F4003299B2 /* Firebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7A23C6F8F4003299B2 /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E9123C6F996003299B2 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9023C6F996003299B2 /* FacebookCore.framework */; };
-		01740E9223C6F996003299B2 /* FacebookCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9023C6F996003299B2 /* FacebookCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E9423C6F9BB003299B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */; };
+		01CD0A9B23C87F62005C8A73 /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9823C70785003299B2 /* ButterBroad.framework */; };
+		01CD0A9C23C87F62005C8A73 /* ButterBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9823C70785003299B2 /* ButterBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		01740E8F23C6F8F5003299B2 /* Embed Frameworks */ = {
+		01CD0A9A23C87F4D005C8A73 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				01740E8023C6F8F4003299B2 /* Analog.framework in Embed Frameworks */,
-				01740E8623C6F8F4003299B2 /* ButterBroad.framework in Embed Frameworks */,
-				01740E8423C6F8F4003299B2 /* Crashlytics.framework in Embed Frameworks */,
-				01740E8223C6F8F4003299B2 /* FaceBookBroad.framework in Embed Frameworks */,
-				01740E7C23C6F8F4003299B2 /* AnalogBroad.framework in Embed Frameworks */,
-				01740E8E23C6F8F4003299B2 /* Firebase.framework in Embed Frameworks */,
-				01740E8C23C6F8F4003299B2 /* Fabric.framework in Embed Frameworks */,
-				01740E7E23C6F8F4003299B2 /* FBSDKCoreKit.framework in Embed Frameworks */,
-				01740E8823C6F8F4003299B2 /* AnyCodable.framework in Embed Frameworks */,
-				01740E9223C6F996003299B2 /* FacebookCore.framework in Embed Frameworks */,
-				01740E8A23C6F8F4003299B2 /* CrashlyticsBroad.framework in Embed Frameworks */,
+				01CD0A9C23C87F62005C8A73 /* ButterBroad.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +65,8 @@
 		01740E7A23C6F8F4003299B2 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
 		01740E9023C6F996003299B2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01740E9523C70732003299B2 /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01740E9823C70785003299B2 /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ButterBroad-dwrzywtyjmtpsdekhdrqhetoqwad/Build/Products/Debug Development-iphonesimulator/ButterBroad.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +75,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01740E7F23C6F8F4003299B2 /* Analog.framework in Frameworks */,
-				01740E8523C6F8F4003299B2 /* ButterBroad.framework in Frameworks */,
 				01740E8323C6F8F4003299B2 /* Crashlytics.framework in Frameworks */,
 				01740E8123C6F8F4003299B2 /* FaceBookBroad.framework in Frameworks */,
 				01740E7B23C6F8F4003299B2 /* AnalogBroad.framework in Frameworks */,
 				01740E8D23C6F8F4003299B2 /* Firebase.framework in Frameworks */,
 				01740E8B23C6F8F4003299B2 /* Fabric.framework in Frameworks */,
+				01CD0A9B23C87F62005C8A73 /* ButterBroad.framework in Frameworks */,
 				01740E7D23C6F8F4003299B2 /* FBSDKCoreKit.framework in Frameworks */,
 				01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */,
 				01740E9123C6F996003299B2 /* FacebookCore.framework in Frameworks */,
@@ -112,6 +94,7 @@
 		01740E4223C6F48B003299B2 = {
 			isa = PBXGroup;
 			children = (
+				01740E9823C70785003299B2 /* ButterBroad.framework */,
 				01740E4D23C6F48B003299B2 /* ButterBroadExample */,
 				01740E4C23C6F48B003299B2 /* Products */,
 				01740E7023C6F8F4003299B2 /* Frameworks */,
@@ -145,6 +128,7 @@
 		01740E7023C6F8F4003299B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01740E9523C70732003299B2 /* ButterBroad.framework */,
 				01740E9023C6F996003299B2 /* FacebookCore.framework */,
 				01740E7323C6F8F4003299B2 /* Analog.framework */,
 				01740E7123C6F8F4003299B2 /* AnalogBroad.framework */,
@@ -173,7 +157,7 @@
 				01740E6C23C6F73F003299B2 /* Crashlytics */,
 				01740E6D23C6F775003299B2 /* Swiftlint */,
 				W60DXR1JVLYH37RXPWSWGKP0 /* Carthage */,
-				01740E8F23C6F8F5003299B2 /* Embed Frameworks */,
+				01CD0A9A23C87F4D005C8A73 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
