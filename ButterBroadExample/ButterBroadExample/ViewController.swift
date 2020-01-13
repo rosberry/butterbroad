@@ -21,7 +21,9 @@ final class ViewController: UIViewController {
         if let text = textField.text, text.isEmpty == false {
             Butter.common.log(.init(name: text))
             textField.text = ""
-            abort()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                abort()
+            }
         }
     }
 

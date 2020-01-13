@@ -101,7 +101,7 @@ public final class Butter: Analytics {
                                                selector: #selector(self.prepareForForeground),
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
-            self.startSending() // Check queue from last session
+            self.handleEventsQueue() // Check queue from last session
 
             self.broads.forEach { broad in
                 broad.activationHandler?()
@@ -178,7 +178,6 @@ public final class Butter: Analytics {
     private func trap(signal: Signal, action: @escaping @convention(c) (Int32) -> ()) {
         var signalAction = sigaction(__sigaction_u: unsafeBitCast(action, to: __sigaction_u.self), sa_mask: 0, sa_flags: 0)
         _ = withUnsafePointer(to: &signalAction) { actionPointer in
-            UserDefaults.standard.set("__signal_\(signal.rawValue)", forKey: "__last_captured_signal")
             sigaction(signal.rawValue, actionPointer, nil)
         }
     }

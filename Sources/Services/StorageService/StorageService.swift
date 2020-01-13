@@ -8,10 +8,6 @@ import Foundation
 
 final class StorageService: StorageServiceProtocol {
 
-    private enum Keys {
-        static let cachedEvents = "__cached_events__"
-    }
-
     private var _events: [Event] = []
 
     var events: [Event] {
@@ -30,21 +26,27 @@ final class StorageService: StorageServiceProtocol {
     // MARK: - Private
 
     private func load() -> [Event] {
-        guard _events.isEmpty,
-            let data = UserDefaults.standard.data(forKey: Keys.cachedEvents),
-            let events = try? JSONDecoder().decode([Event].self, from: data) else {
+        guard _events.isEmpty, let url = storageURL(), let events = NSArray(contentsOf: url) as? [Event] else {
             return _events
         }
-        UserDefaults.standard.removeObject(forKey: Keys.cachedEvents)
         _events = events
+        try? FileManager.default.removeItem(at: url)
         return events
     }
 
     private func save(_ events: [Event]) {
         _events = events
-        guard let data = try? JSONEncoder().encode(events) else {
+        guard let url = storageURL() else {
             return
         }
-        UserDefaults.standard.set(data, forKey: Keys.cachedEvents)
+        (events as NSArray).write(to: url, atomically: true)
+    }
+
+    private func storageURL() -> URL? {
+        return storageDirectoryURL()?.appendingPathComponent("__analytics.tmp")
+    }
+
+    private func storageDirectoryURL() -> URL? {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 }
