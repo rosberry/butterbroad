@@ -85,7 +85,7 @@ public final class Butter: Analytics {
                 return
             }
 
-            self.trap(signals: [.abrt, .quit, .kill]) { _ in
+            self.trap(signals: [.abrt]) { _ in
                 Services.storageService.save() // Context is unavailable here, could not use dependencies
             }
     
