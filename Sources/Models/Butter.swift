@@ -85,7 +85,7 @@ public final class Butter: Analytics {
                 return
             }
 
-            self.trap(signals: [.abrt, .quit, .kill, .term]) { _ in
+            self.trap(signals: [.abrt, .quit, .kill]) { _ in
                 Services.storageService.save() // Context is unavailable here, could not use dependencies
             }
     
@@ -101,7 +101,7 @@ public final class Butter: Analytics {
                                                selector: #selector(self.prepareForForeground),
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
-            self.handleEventsQueue() // Check queue from last session
+            self.startSending() // Check queue from last session
 
             self.broads.forEach { broad in
                 broad.activationHandler?()
