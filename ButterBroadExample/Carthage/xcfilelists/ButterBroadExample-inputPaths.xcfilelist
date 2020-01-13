@@ -1,2 +1,3 @@
+$(SRCROOT)/Carthage/Build/iOS/Analog.framework
+$(SRCROOT)/Carthage/Build/iOS/AnalogBroad.framework
 $(SRCROOT)/Carthage/Build/iOS/AnyCodable.framework
-$(SRCROOT)/Carthage/Build/iOS/ButterBroad.framework

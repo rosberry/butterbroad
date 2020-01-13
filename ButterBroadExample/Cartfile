@@ -1,1 +1,2 @@
 github "rosberry/ButterBroad" "feature/ISD-187-agregator"
+github "rosberry/AnalogBroad" "feature/ISD-194-analog-analytics-component"

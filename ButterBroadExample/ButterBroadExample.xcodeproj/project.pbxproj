@@ -16,8 +16,22 @@
 		01740E6B23C6F606003299B2 /* Butter+ApplicationBroads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01740E6A23C6F606003299B2 /* Butter+ApplicationBroads.swift */; };
 		01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7723C6F8F4003299B2 /* AnyCodable.framework */; };
 		01740E9423C6F9BB003299B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */; };
-		01CD0A9D23C87FF5005C8A73 /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7623C6F8F4003299B2 /* ButterBroad.framework */; };
+		01CD0AA023CC55A3005C8A73 /* Analog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7323C6F8F4003299B2 /* Analog.framework */; };
+		01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7123C6F8F4003299B2 /* AnalogBroad.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0182507923CC5CCF00FFC48F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01740E4B23C6F48B003299B2 /* ButterBroadExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterBroadExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,14 +48,12 @@
 		01740E7323C6F8F4003299B2 /* Analog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analog.framework; path = Carthage/Build/iOS/Analog.framework; sourceTree = "<group>"; };
 		01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceBookBroad.framework; path = Carthage/Build/iOS/FaceBookBroad.framework; sourceTree = "<group>"; };
 		01740E7523C6F8F4003299B2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Carthage/Build/iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		01740E7623C6F8F4003299B2 /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = Carthage/Build/iOS/ButterBroad.framework; sourceTree = "<group>"; };
 		01740E7723C6F8F4003299B2 /* AnyCodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyCodable.framework; path = Carthage/Build/iOS/AnyCodable.framework; sourceTree = "<group>"; };
 		01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashlyticsBroad.framework; path = Carthage/Build/iOS/CrashlyticsBroad.framework; sourceTree = "<group>"; };
 		01740E7923C6F8F4003299B2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Carthage/Build/iOS/Fabric.framework; sourceTree = "<group>"; };
 		01740E7A23C6F8F4003299B2 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
 		01740E9023C6F996003299B2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		01740E9823C70785003299B2 /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ButterBroad-dwrzywtyjmtpsdekhdrqhetoqwad/Build/Products/Debug Development-iphonesimulator/ButterBroad.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01CD0A9D23C87FF5005C8A73 /* ButterBroad.framework in Frameworks */,
+				01CD0AA023CC55A3005C8A73 /* Analog.framework in Frameworks */,
 				01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */,
+				01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +73,6 @@
 		01740E4223C6F48B003299B2 = {
 			isa = PBXGroup;
 			children = (
-				01740E9823C70785003299B2 /* ButterBroad.framework */,
 				01740E4D23C6F48B003299B2 /* ButterBroadExample */,
 				01740E4C23C6F48B003299B2 /* Products */,
 				01740E7023C6F8F4003299B2 /* Frameworks */,
@@ -98,7 +110,6 @@
 				01740E7323C6F8F4003299B2 /* Analog.framework */,
 				01740E7123C6F8F4003299B2 /* AnalogBroad.framework */,
 				01740E7723C6F8F4003299B2 /* AnyCodable.framework */,
-				01740E7623C6F8F4003299B2 /* ButterBroad.framework */,
 				01740E7523C6F8F4003299B2 /* Crashlytics.framework */,
 				01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */,
 				01740E7923C6F8F4003299B2 /* Fabric.framework */,
@@ -122,6 +133,7 @@
 				01740E6C23C6F73F003299B2 /* Crashlytics */,
 				01740E6D23C6F775003299B2 /* Swiftlint */,
 				W60DXR1JVLYH37RXPWSWGKP0 /* Carthage */,
+				0182507923CC5CCF00FFC48F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

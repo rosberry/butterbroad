@@ -6,8 +6,6 @@
 
 import UIKit
 import ButterBroad
-import Firebase
-import Analog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //Butter.common.activationHandler?()
+        Butter.common.requestDelay = 1e10
+        Butter.common.activationHandler?()
         return true
     }
 
