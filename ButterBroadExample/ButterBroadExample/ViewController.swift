@@ -25,13 +25,13 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func showCurrentSessionEventsPressed(_ sender: Any) {
-        let controller = Butter.analog.logger.currentEventsModule()
-        present(controller, animated: true)
+//        let controller = Butter.analog.logger.currentEventsModule()
+//        present(controller, animated: true)
     }
 
     @IBAction func showAllSessionsButtonPressed(_ sender: Any) {
-        let controller = Butter.analog.logger.sessionsModule()
-        present(controller, animated: true)
+//        let controller = Butter.analog.logger.sessionsModule()
+//        present(controller, animated: true)
     }
 }
 

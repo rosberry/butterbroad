@@ -5,14 +5,53 @@
 //
 
 import UIKit
+import Darwin
 
 public final class Butter: Analytics {
+
+    private typealias SignalActionHandler = @convention(c)(Int32) -> Void
+
+    private enum Signal {
+        case hup
+        case int
+        case quit
+        case abrt
+        case kill
+        case alrm
+        case term
+        case pipe
+        case user(Int32)
+
+        var rawValue: Int32 {
+            switch self {
+            case .hup:
+                return Int32(SIGHUP)
+            case .int:
+                return Int32(SIGINT)
+            case .quit:
+                return Int32(SIGQUIT)
+            case .abrt:
+                return Int32(SIGABRT)
+            case .kill:
+                return Int32(SIGKILL)
+            case .alrm:
+                return Int32(SIGALRM)
+            case .term:
+                return Int32(SIGTERM)
+            case .pipe:
+                return Int32(SIGPIPE)
+            case .user(let value):
+                return value
+            }
+        }
+    }
 
     public var requestDelay = 0.25
     public var activationHandler: (() -> Void)?
     private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
     private let broads: [Analytics]
+
 
     private var queue: [Event] {
         get {
@@ -45,9 +84,11 @@ public final class Butter: Analytics {
             guard let self = self else {
                 return
             }
-            NSSetUncaughtExceptionHandler { _ in
+
+            self.trap(signals: [.abrt, .quit, .kill, .term]) { _ in
                 Services.storageService.save() // Context is unavailable here, could not use dependencies
             }
+    
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(self.prepareForBackground),
                                                  name: UIApplication.willTerminateNotification,
@@ -131,5 +172,19 @@ public final class Butter: Analytics {
     private func stopSending() {
         eventsQueueTimer?.invalidate()
         eventsQueueTimer = nil
+    }
+
+
+    private func trap(signal: Signal, action: @escaping @convention(c) (Int32) -> ()) {
+        var signalAction = sigaction(__sigaction_u: unsafeBitCast(action, to: __sigaction_u.self), sa_mask: 0, sa_flags: 0)
+        _ = withUnsafePointer(to: &signalAction) { actionPointer in
+            sigaction(signal.rawValue, actionPointer, nil)
+        }
+    }
+
+    private func trap(signals: [Signal], action: @escaping SignalActionHandler) {
+        signals.forEach { signal in
+            trap(signal: signal, action: action)
+        }
     }
 }
