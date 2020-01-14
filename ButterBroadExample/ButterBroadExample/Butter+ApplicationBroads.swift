@@ -7,12 +7,12 @@
 
 import ButterBroad
 import AnalogBroad
-//import FaceBookBroad
-//import CrashlyticsBroad
+import FaceBookBroad
+import FirebaseBroad
 
 extension Butter {
     static let analog: AnalogBroad = .init()
-//    static let facebook: FaceBookBroad = .init()
-//    static let crashlytics: CrashlyticsBroad = .init()
-    static let common: Butter = .init(broads: [analog])//, facebook, crashlytics)
+    static let facebook: FaceBookBroad = .init()
+    static let firebase: FirebaseBroad = .init()
+    static let common: Butter = .init(broads: analog, facebook, firebase)
 }

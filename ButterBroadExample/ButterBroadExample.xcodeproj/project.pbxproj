@@ -17,9 +17,34 @@
 		01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7723C6F8F4003299B2 /* AnyCodable.framework */; };
 		01740E9423C6F9BB003299B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */; };
 		0182507B23CC5F1D00FFC48F /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0182507A23CC5F1D00FFC48F /* ButterBroad.framework */; };
+		01977E5623CD843500C694EB /* FaceBookBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */; };
+		01977E5723CD843500C694EB /* FaceBookBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		01977E5A23CD843500C694EB /* FirebaseBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01977E5923CD843500C694EB /* FirebaseBroad.framework */; };
+		01977E5B23CD843500C694EB /* FirebaseBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01977E5923CD843500C694EB /* FirebaseBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		01977E5C23CD846000C694EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */; };
+		01977E5D23CD846000C694EB /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		01977E5E23CD847E00C694EB /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9023C6F996003299B2 /* FacebookCore.framework */; };
+		01977E5F23CD847E00C694EB /* FacebookCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E9023C6F996003299B2 /* FacebookCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01CD0AA023CC55A3005C8A73 /* Analog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7323C6F8F4003299B2 /* Analog.framework */; };
 		01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7123C6F8F4003299B2 /* AnalogBroad.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		01977E5823CD843500C694EB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				01977E5B23CD843500C694EB /* FirebaseBroad.framework in Embed Frameworks */,
+				01977E5F23CD847E00C694EB /* FacebookCore.framework in Embed Frameworks */,
+				01977E5D23CD846000C694EB /* FBSDKCoreKit.framework in Embed Frameworks */,
+				01977E5723CD843500C694EB /* FaceBookBroad.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01740E4B23C6F48B003299B2 /* ButterBroadExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterBroadExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,14 +60,12 @@
 		01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		01740E7323C6F8F4003299B2 /* Analog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analog.framework; path = Carthage/Build/iOS/Analog.framework; sourceTree = "<group>"; };
 		01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FaceBookBroad.framework; path = Carthage/Build/iOS/FaceBookBroad.framework; sourceTree = "<group>"; };
-		01740E7523C6F8F4003299B2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Carthage/Build/iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		01740E7723C6F8F4003299B2 /* AnyCodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyCodable.framework; path = Carthage/Build/iOS/AnyCodable.framework; sourceTree = "<group>"; };
-		01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashlyticsBroad.framework; path = Carthage/Build/iOS/CrashlyticsBroad.framework; sourceTree = "<group>"; };
-		01740E7923C6F8F4003299B2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Carthage/Build/iOS/Fabric.framework; sourceTree = "<group>"; };
 		01740E7A23C6F8F4003299B2 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
 		01740E9023C6F996003299B2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0182507A23CC5F1D00FFC48F /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = Carthage/Build/iOS/ButterBroad.framework; sourceTree = "<group>"; };
+		01977E5923CD843500C694EB /* FirebaseBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseBroad.framework; path = Carthage/Build/iOS/FirebaseBroad.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +74,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD0AA023CC55A3005C8A73 /* Analog.framework in Frameworks */,
+				01977E5623CD843500C694EB /* FaceBookBroad.framework in Frameworks */,
+				01977E5A23CD843500C694EB /* FirebaseBroad.framework in Frameworks */,
 				01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */,
+				01977E5C23CD846000C694EB /* FBSDKCoreKit.framework in Frameworks */,
+				01977E5E23CD847E00C694EB /* FacebookCore.framework in Frameworks */,
 				01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */,
 				0182507B23CC5F1D00FFC48F /* ButterBroad.framework in Frameworks */,
 			);
@@ -96,14 +123,12 @@
 		01740E7023C6F8F4003299B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01977E5923CD843500C694EB /* FirebaseBroad.framework */,
 				0182507A23CC5F1D00FFC48F /* ButterBroad.framework */,
 				01740E9023C6F996003299B2 /* FacebookCore.framework */,
 				01740E7323C6F8F4003299B2 /* Analog.framework */,
 				01740E7123C6F8F4003299B2 /* AnalogBroad.framework */,
 				01740E7723C6F8F4003299B2 /* AnyCodable.framework */,
-				01740E7523C6F8F4003299B2 /* Crashlytics.framework */,
-				01740E7823C6F8F4003299B2 /* CrashlyticsBroad.framework */,
-				01740E7923C6F8F4003299B2 /* Fabric.framework */,
 				01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */,
 				01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */,
 				01740E7A23C6F8F4003299B2 /* Firebase.framework */,
@@ -121,9 +146,9 @@
 				01740E4723C6F48B003299B2 /* Sources */,
 				01740E4823C6F48B003299B2 /* Frameworks */,
 				01740E4923C6F48B003299B2 /* Resources */,
-				01740E6C23C6F73F003299B2 /* Crashlytics */,
 				01740E6D23C6F775003299B2 /* Swiftlint */,
 				W60DXR1JVLYH37RXPWSWGKP0 /* Carthage */,
+				01977E5823CD843500C694EB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,24 +208,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01740E6C23C6F73F003299B2 /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Crashlytics;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Carthage/Build/iOS/Fabric.framework/run\" 88b4c0775675b55f4f571c573fcbe93319b390bd ec2906657b91b7c88ac4785c0305342845790a45af28b609979e240a0d182bdc\n";
-		};
 		01740E6D23C6F775003299B2 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
