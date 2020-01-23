@@ -7,6 +7,38 @@
 import UIKit
 import Darwin
 
+// MARK: - File operations
+// File operation methods should be available without context in case of abnormal app termination
+
+fileprivate var events: [Event] = []
+
+fileprivate func storageURL() -> URL? {
+    return storageDirectoryURL()?.appendingPathComponent(".butterbroad")
+}
+
+fileprivate func storageDirectoryURL() -> URL? {
+    return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+}
+
+fileprivate func unloadEventsFromDisk() {
+    guard let url = storageURL(),
+        let data = try? Data(contentsOf: url),
+        let loadedEvents = try? JSONDecoder().decode([Event].self, from: data) else {
+        return
+    }
+    try? FileManager.default.removeItem(at: url)
+    events = loadedEvents
+}
+
+fileprivate func saveEventsToDisk() {
+    guard let url = storageURL(),
+        let data = try? JSONEncoder().encode(events) else {
+        return
+    }
+    try? data.write(to: url)
+}
+
+// MARK: - Butter
 public final class Butter: Analytics {
 
     private typealias SignalActionHandler = @convention(c)(Int32) -> Void
@@ -48,19 +80,8 @@ public final class Butter: Analytics {
 
     public var requestDelay = 0.25
     public var activationHandler: (() -> Void)?
-    private lazy var dependencies: HasStorageService = Services
     private var eventsQueueTimer: Timer?
     private let broads: [Analytics]
-
-
-    private var queue: [Event] {
-        get {
-            dependencies.storageService.events
-        }
-        set {
-            dependencies.storageService.events = newValue
-        }
-    }
 
     // MARK: - Lifecycle
 
@@ -80,13 +101,14 @@ public final class Butter: Analytics {
 
     public init(broads: [Analytics]) {
         self.broads = broads
+        unloadEventsFromDisk()
         activationHandler = { [weak self] in
             guard let self = self else {
                 return
             }
 
             self.trap(signals: [.abrt, .quit, .kill, .term]) { _ in
-                Services.storageService.save() // Context is unavailable here, could not use dependencies
+                saveEventsToDisk()
             }
     
             NotificationCenter.default.addObserver(self,
@@ -102,6 +124,7 @@ public final class Butter: Analytics {
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
             self.handleEventsQueue() // Check queue from last session
+            self.startSending()
 
             self.broads.forEach { broad in
                 broad.activationHandler?()
@@ -123,29 +146,25 @@ public final class Butter: Analytics {
     ///    - event: the event that should be sent to the list of analytics plugins
 
     public func log(_ event: Event) {
-        putIntoQueue(event)
+        events.append(event)
+        startSending()
     }
 
     // MARK: - Private
 
-    private func putIntoQueue(_ event: Event) {
-        queue.append(event)
-        startSending()
-    }
-
     @objc private func handleEventsQueue() {
-        guard dependencies.storageService.events.isEmpty == false else {
+        guard events.isEmpty == false else {
             eventsQueueTimer?.invalidate()
             eventsQueueTimer = nil
             return
         }
-        let event = queue.removeFirst()
+        let event = events.removeFirst()
         logToBroads(event)
     }
 
     @objc private func prepareForBackground() {
         stopSending()
-        dependencies.storageService.save()
+        saveEventsToDisk()
     }
 
     @objc private func prepareForForeground() {
@@ -175,7 +194,7 @@ public final class Butter: Analytics {
     }
 
 
-    private func trap(signal: Signal, action: @escaping @convention(c) (Int32) -> ()) {
+    private func trap(signal: Signal, action: @escaping SignalActionHandler) {
         var signalAction = sigaction(__sigaction_u: unsafeBitCast(action, to: __sigaction_u.self), sa_mask: 0, sa_flags: 0)
         _ = withUnsafePointer(to: &signalAction) { actionPointer in
             sigaction(signal.rawValue, actionPointer, nil)

@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012A022C233CC0C000C99775 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A022B233CC0C000C99775 /* StorageService.swift */; };
 		012A0249233CD68000C99775 /* AnyCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012A0248233CD68000C99775 /* AnyCodable.framework */; };
 		861A7815229BBAE1008B6687 /* Butter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A7814229BBAE1008B6687 /* Butter.swift */; };
 		86F163942292548E003F734C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163922292548E003F734C /* Event.swift */; };
 		86F163952292548E003F734C /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F163932292548E003F734C /* Analytics.swift */; };
-		86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16397229254A8003F734C /* StorageServiceProtocol.swift */; };
-		86F1639C229254A8003F734C /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F16399229254A8003F734C /* ServiceFactory.swift */; };
 		86F1640D22927648003F734C /* ButterBroadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F1640C22927648003F734C /* ButterBroadTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,16 +25,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012A022B233CC0C000C99775 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		012A0248233CD68000C99775 /* AnyCodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyCodable.framework; path = Carthage/Build/iOS/AnyCodable.framework; sourceTree = "<group>"; };
-		0182506E23CC5B7E00FFC48F /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ButterBroad.framework; path = "/Users/nick/Documents/GitHub/butterbroad/build/Debug Development-iphoneos/ButterBroad.framework"; sourceTree = "<absolute>"; };
+		0196964323D9B37A005F53CF /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		861A7814229BBAE1008B6687 /* Butter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Butter.swift; sourceTree = "<group>"; };
 		86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1636B229253BD003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F163922292548E003F734C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		86F163932292548E003F734C /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		86F16397229254A8003F734C /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
-		86F16399229254A8003F734C /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		86F163FF229275CF003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F1640C22927648003F734C /* ButterBroadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButterBroadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,16 +71,8 @@
 				86F163FC229275CF003F734C /* ButterBroadTests */,
 				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
 				012A0247233CD68000C99775 /* Frameworks */,
+				0196964323D9B37A005F53CF /* ButterBroad.framework */,
 			);
-			sourceTree = "<group>";
-		};
-		060F085F1E4D6C9200D9166F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				86F16399229254A8003F734C /* ServiceFactory.swift */,
-				86F16396229254A8003F734C /* StorageService */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		060F08761E4D6CDF00D9166F /* Models */ = {
@@ -107,20 +93,10 @@
 			path = ButterBroad;
 			sourceTree = "<group>";
 		};
-		86F16396229254A8003F734C /* StorageService */ = {
-			isa = PBXGroup;
-			children = (
-				86F16397229254A8003F734C /* StorageServiceProtocol.swift */,
-				012A022B233CC0C000C99775 /* StorageService.swift */,
-			);
-			path = StorageService;
-			sourceTree = "<group>";
-		};
 		86F1639F2292644E003F734C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				060F08761E4D6CDF00D9166F /* Models */,
-				060F085F1E4D6C9200D9166F /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -163,7 +139,7 @@
 			);
 			name = ButterBroad;
 			productName = ButterBroad;
-			productReference = 0182506E23CC5B7E00FFC48F /* ButterBroad.framework */;
+			productReference = 0196964323D9B37A005F53CF /* ButterBroad.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		86F163FA229275CF003F734C /* ButterBroadTests */ = {
@@ -294,11 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				861A7815229BBAE1008B6687 /* Butter.swift in Sources */,
-				86F1639C229254A8003F734C /* ServiceFactory.swift in Sources */,
-				86F1639A229254A8003F734C /* StorageServiceProtocol.swift in Sources */,
 				86F163952292548E003F734C /* Analytics.swift in Sources */,
 				86F163942292548E003F734C /* Event.swift in Sources */,
-				012A022C233CC0C000C99775 /* StorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
