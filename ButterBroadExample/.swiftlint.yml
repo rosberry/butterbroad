@@ -3,8 +3,6 @@
 excluded:
   - Carthage/
   - Pods/
-  - ButterBroadExample/Carthage/
-  - ButterBroadExample/Pods/
 
 # Rules
 

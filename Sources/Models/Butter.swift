@@ -10,17 +10,17 @@ import Darwin
 // MARK: - File operations
 // File operation methods should be available without context in case of abnormal app termination
 
-fileprivate var events: [Event] = []
+private var events: [Event] = []
 
-fileprivate func storageURL() -> URL? {
+private func storageURL() -> URL? {
     return storageDirectoryURL()?.appendingPathComponent(".butterbroad")
 }
 
-fileprivate func storageDirectoryURL() -> URL? {
+private func storageDirectoryURL() -> URL? {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
 }
 
-fileprivate func unloadEventsFromDisk() {
+private func unloadEventsFromDisk() {
     guard let url = storageURL(),
         let data = try? Data(contentsOf: url),
         let loadedEvents = try? JSONDecoder().decode([Event].self, from: data) else {
@@ -30,7 +30,7 @@ fileprivate func unloadEventsFromDisk() {
     events = loadedEvents
 }
 
-fileprivate func saveEventsToDisk() {
+private func saveEventsToDisk() {
     guard let url = storageURL(),
         let data = try? JSONEncoder().encode(events) else {
         return
@@ -110,7 +110,7 @@ public final class Butter: Analytics {
             self.trap(signals: [.abrt, .quit, .kill, .term]) { _ in
                 saveEventsToDisk()
             }
-    
+
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(self.prepareForBackground),
                                                  name: UIApplication.willTerminateNotification,
