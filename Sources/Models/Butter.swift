@@ -193,7 +193,6 @@ public final class Butter: Analytics {
         eventsQueueTimer = nil
     }
 
-
     private func trap(signal: Signal, action: @escaping SignalActionHandler) {
         var signalAction = sigaction(__sigaction_u: unsafeBitCast(action, to: __sigaction_u.self), sa_mask: 0, sa_flags: 0)
         _ = withUnsafePointer(to: &signalAction) { actionPointer in

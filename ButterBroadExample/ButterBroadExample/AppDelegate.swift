@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Butter.common.requestDelay = 10
         Butter.common.activationHandler?()
         return true
     }
@@ -22,4 +21,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Butter.facebook.activationHandler?()
     }
 }
-

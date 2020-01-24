@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0144E0C123D5AA4D0085DDD0 /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0144E0C023D5AA4D0085DDD0 /* ButterBroad.framework */; };
-		0144E0C223D5AA4D0085DDD0 /* ButterBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0144E0C023D5AA4D0085DDD0 /* ButterBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01740E4F23C6F48B003299B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01740E4E23C6F48B003299B2 /* AppDelegate.swift */; };
 		01740E5323C6F48B003299B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01740E5223C6F48B003299B2 /* ViewController.swift */; };
 		01740E5623C6F48B003299B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01740E5423C6F48B003299B2 /* Main.storyboard */; };
@@ -18,6 +16,8 @@
 		01740E6B23C6F606003299B2 /* Butter+ApplicationBroads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01740E6A23C6F606003299B2 /* Butter+ApplicationBroads.swift */; };
 		01740E8723C6F8F4003299B2 /* AnyCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7723C6F8F4003299B2 /* AnyCodable.framework */; };
 		01740E9423C6F9BB003299B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */; };
+		0196964623DA993D005F53CF /* ButterBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196964523DA993D005F53CF /* ButterBroad.framework */; };
+		0196964723DA993D005F53CF /* ButterBroad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0196964523DA993D005F53CF /* ButterBroad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01977E5623CD843500C694EB /* FaceBookBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7423C6F8F4003299B2 /* FaceBookBroad.framework */; };
 		01977E5A23CD843500C694EB /* FirebaseBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01977E5923CD843500C694EB /* FirebaseBroad.framework */; };
 		01977E5C23CD846000C694EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7223C6F8F4003299B2 /* FBSDKCoreKit.framework */; };
@@ -26,23 +26,6 @@
 		01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01740E7123C6F8F4003299B2 /* AnalogBroad.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0144E0B923D5A94D0085DDD0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0144E0B223D5A94D0085DDD0 /* ButterBroad.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86D975E42297E3F1007BFC7E;
-			remoteInfo = ButterBroadTests;
-		};
-		0144E0BF23D5AA4D0085DDD0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0144E0B223D5A94D0085DDD0 /* ButterBroad.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0144E0BB23D5AA390085DDD0;
-			remoteInfo = ButterBroad;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		0144E0B123D5A6CC0085DDD0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -50,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0144E0C223D5AA4D0085DDD0 /* ButterBroad.framework in Embed Frameworks */,
+				0196964723DA993D005F53CF /* ButterBroad.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,7 +41,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0144E0B223D5A94D0085DDD0 /* ButterBroad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ButterBroad.xcodeproj; path = ../ButterBroad.xcodeproj; sourceTree = "<group>"; };
 		01740E4B23C6F48B003299B2 /* ButterBroadExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButterBroadExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01740E4E23C6F48B003299B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01740E5223C6F48B003299B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +58,7 @@
 		01740E7A23C6F8F4003299B2 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
 		01740E9023C6F996003299B2 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
 		01740E9323C6F9BA003299B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0196964523DA993D005F53CF /* ButterBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ButterBroad.framework; path = Carthage/Build/iOS/ButterBroad.framework; sourceTree = "<group>"; };
 		01977E5923CD843500C694EB /* FirebaseBroad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseBroad.framework; path = Carthage/Build/iOS/FirebaseBroad.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,26 +74,16 @@
 				01977E5C23CD846000C694EB /* FBSDKCoreKit.framework in Frameworks */,
 				01977E5E23CD847E00C694EB /* FacebookCore.framework in Frameworks */,
 				01CD0AA223CC55A3005C8A73 /* AnalogBroad.framework in Frameworks */,
-				0144E0C123D5AA4D0085DDD0 /* ButterBroad.framework in Frameworks */,
+				0196964623DA993D005F53CF /* ButterBroad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0144E0B323D5A94D0085DDD0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0144E0C023D5AA4D0085DDD0 /* ButterBroad.framework */,
-				0144E0BA23D5A94D0085DDD0 /* ButterBroadTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		01740E4223C6F48B003299B2 = {
 			isa = PBXGroup;
 			children = (
-				0144E0B223D5A94D0085DDD0 /* ButterBroad.xcodeproj */,
 				01740E4D23C6F48B003299B2 /* ButterBroadExample */,
 				01740E4C23C6F48B003299B2 /* Products */,
 				01740E7023C6F8F4003299B2 /* Frameworks */,
@@ -144,6 +117,7 @@
 		01740E7023C6F8F4003299B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0196964523DA993D005F53CF /* ButterBroad.framework */,
 				01977E5923CD843500C694EB /* FirebaseBroad.framework */,
 				01740E9023C6F996003299B2 /* FacebookCore.framework */,
 				01740E7323C6F8F4003299B2 /* Analog.framework */,
@@ -205,35 +179,12 @@
 			mainGroup = 01740E4223C6F48B003299B2;
 			productRefGroup = 01740E4C23C6F48B003299B2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0144E0B323D5A94D0085DDD0 /* Products */;
-					ProjectRef = 0144E0B223D5A94D0085DDD0 /* ButterBroad.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				01740E4A23C6F48B003299B2 /* ButterBroadExample */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0144E0BA23D5A94D0085DDD0 /* ButterBroadTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ButterBroadTests.xctest;
-			remoteRef = 0144E0B923D5A94D0085DDD0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0144E0C023D5AA4D0085DDD0 /* ButterBroad.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ButterBroad.framework;
-			remoteRef = 0144E0BF23D5AA4D0085DDD0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		01740E4923C6F48B003299B2 /* Resources */ = {
