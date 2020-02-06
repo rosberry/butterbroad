@@ -9,6 +9,8 @@ import AnyCodable
 final class ButterBroadTests: XCTestCase {
 
     final class MockedAnalytics: Analytics {
+        var activationHandler: (() -> Void)?
+
         var events = [Event]()
 
         func log(_ event: Event) {
@@ -46,25 +48,25 @@ final class ButterBroadTests: XCTestCase {
         butterbroad.log(Event(name: "test_event"))
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
-        XCTAssert(event.params.isEmpty, "Params not expected")
-        XCTAssert(date.timeIntervalSince(event.date) < 1, "Event date should be nearly match with sending time")
+        XCTAssertEqual(event.name, "test_event", "Event should have name 'test_event'")
+        XCTAssertTrue(event.params.isEmpty, "Params not expected")
+        XCTAssertLessThan(date.timeIntervalSince(event.date), 1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithName() {
         butterbroad.logEvent(with: "test_event")
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(event.name == "test_event", "Event should have name 'test_event'")
-        XCTAssert(event.params.isEmpty, "Params not expected")
-        XCTAssert(date.timeIntervalSince(event.date) < 1, "Event date should be nearly match with sending time")
+        XCTAssertEqual(event.name, "test_event", "Event should have name 'test_event'")
+        XCTAssertTrue(event.params.isEmpty, "Params not expected")
+        XCTAssertLessThan(date.timeIntervalSince(event.date), 1, "Event date should be nearly match with sending time")
     }
 
     func testLogEventWithParam() {
         butterbroad.log(Event(name: "test_event", params: ["param_1": "test"]))
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(!event.params.isEmpty, "1 Params is expected")
+        XCTAssertFalse(event.params.isEmpty, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
     }
 
@@ -72,7 +74,7 @@ final class ButterBroadTests: XCTestCase {
         butterbroad.logEvent(with: "test_event", params: ["param_1": "test"])
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(event.params.count == 1, "1 Params is expected")
+        XCTAssertEqual(event.params.count, 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: "test", message: "Expected 'param_1' = 'test'")
     }
 
@@ -80,7 +82,7 @@ final class ButterBroadTests: XCTestCase {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 10])
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(event.params.count == 1, "1 Params is expected")
+        XCTAssertEqual(event.params.count, 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 10, message: "Expected 'param_1' = 10")
     }
 
@@ -88,7 +90,7 @@ final class ButterBroadTests: XCTestCase {
         butterbroad.logEvent(with: "test_event", params: ["param_1": 0.12345])
         wait(for: [expectation], timeout: 10)
         let event = first(in: analytics)
-        XCTAssert(event.params.count == 1, "1 Params is expected")
+        XCTAssertEqual(event.params.count, 1, "1 Params is expected")
         assertParam(event.params["param_1"], value: 0.12345, message: "Expected 'param_1' = 0.12345")
     }
 
