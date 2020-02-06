@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		012A0248233CD68000C99775 /* AnyCodable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnyCodable.framework; path = Carthage/Build/iOS/AnyCodable.framework; sourceTree = "<group>"; };
-		0196964323D9B37A005F53CF /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0196964323D9B37A005F53CF /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ButterBroad.framework; path = "/Users/nick/Documents/GitHub/butterbroad/build/Debug Development-iphoneos/ButterBroad.framework"; sourceTree = "<absolute>"; };
 		861A7814229BBAE1008B6687 /* Butter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Butter.swift; sourceTree = "<group>"; };
 		86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterBroadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F1636B229253BD003F734C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,7 +71,6 @@
 				86F163FC229275CF003F734C /* ButterBroadTests */,
 				86D975E42297E3F1007BFC7E /* ButterBroadTests.xctest */,
 				012A0247233CD68000C99775 /* Frameworks */,
-				0196964323D9B37A005F53CF /* ButterBroad.framework */,
 			);
 			sourceTree = "<group>";
 		};
