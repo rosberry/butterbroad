@@ -20,6 +20,10 @@ Create a `Cartfile` that lists the framework and run `carthage update`. Follow t
 github "rosberry/ButterBroad"
 ```
 
+### Manually
+
+Drag `Sources` folder from [last release](https://github.com/rosberry/butterbroad/releases) into your project.
+
 ## Usage
 - Provide an adapter for analytic component by the implementing of  `Analytics` protocol
 - Combine adapters using an instance of `Butter` class
@@ -31,6 +35,51 @@ extension Butter {
 }
 ```
 - Use `logEvent` method to send an event with custom name  
+
+## Favorite broads
+
+- [AnalogBroad](https://github.com/rosberry/AnalogBroad)
+- [FirebaseBroad](https://github.com/rosberry/CrashlyticsBroad)
+- [FacebookBroad](https://github.com/rosberry/FacebookBroad)
+
+```swift
+//  Butter+ApplicationBroads.swift
+import UIKit
+import ButterBroad
+import AnalogBroad
+import FacebookBroad
+import FirebaseBroad
+
+extension Butter {
+    static let analog: AnalogBroad = .init()
+    static let facebook: FacebookBroad = .init()
+    static let firebase: FirebaseBroad = .init()
+    static let common: Butter = .init(broads: analog, facebook, firebase)
+}
+
+//  AppDelegate.swift
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Butter.common.activationHandler?()
+        return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Butter.facebook.activationHandler?()
+    }
+}
+
+//  ViewController.swift
+
+func logButtonClick() {
+    Butter.common.logEvent(with: "button_click")
+}
+```
 
 ## Authors
 
