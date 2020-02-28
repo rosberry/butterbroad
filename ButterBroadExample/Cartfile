@@ -1,4 +1,4 @@
-github "rosberry/ButterBroad" "feature/ISD-187-agregator"
-github "rosberry/AnalogBroad" "feature/ISD-194-analog-analytics-component"
-github "rosberry/FaceBookBroad" "feature/ISD-188-facebook-analytics-component"
-github "rosberry/CrashlyticsBroad" "feature/ISD-189-crashlitics-analytics-component"
+github "rosberry/ButterBroad"
+github "rosberry/AnalogBroad"
+github "rosberry/FaceBookBroad"
+github "rosberry/CrashlyticsBroad"
