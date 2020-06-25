@@ -13,11 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Butter.common.activationHandler?()
+        Butter.common.activate()
         return true
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        Butter.facebook.activationHandler?()
+        Butter.facebook.activate()
     }
 }
