@@ -1,4 +1,5 @@
 $(SRCROOT)/Carthage/Build/iOS/Analog.framework
+$(SRCROOT)/Carthage/Build/iOS/ButterBroad.framework
 $(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework
 $(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework
 $(SRCROOT)/Carthage/Build/iOS/Firebase.framework

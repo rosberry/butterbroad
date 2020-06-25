@@ -8,7 +8,6 @@
 
 import ButterBroad
 import Analog
-import AnyCodable
 
 public enum SessionFilter {
     case current

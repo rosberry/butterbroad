@@ -9,13 +9,16 @@ import Firebase
 
 final public class FirebaseBroad: ButterBroad.Analytics {
 
-    public var activationHandler: (() -> Void)? = {
+    static let defaultActivation: (() -> Void)? = {
         FirebaseApp.configure()
     }
 
-    /// Creates an instance of FirebaseBroad. To use it one of the overrides of 'FirebaseApp.configure' methods should be called
-    public init() {
+    public var activationHandler: (() -> Void)?
+
+    public init(with activationHandler: (() -> Void)? = nil) {
+        self.activationHandler = activationHandler
     }
+
 
     public func log(_ event: Event) {
         Firebase.Analytics.logEvent(event.name, parameters: event.params)

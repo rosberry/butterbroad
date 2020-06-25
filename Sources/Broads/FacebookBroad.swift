@@ -10,11 +10,14 @@ import FBSDKCoreKit
 
 public final class FacebookBroad: Analytics {
 
-    public var activationHandler: (() -> Void)? = {
+    static let defaultActivation: (() -> Void)? = {
         AppEvents.activateApp()
     }
 
-    public init() {
+    public var activationHandler: (() -> Void)?
+
+    public init(with activationHandler: (() -> Void)? = nil) {
+        self.activationHandler = activationHandler
     }
 
     public func log(_ event: Event) {

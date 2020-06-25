@@ -9,7 +9,7 @@ import ButterBroad
 
 extension Butter {
     static let analog: AnalogBroad = .init()
-    static let facebook: FacebookBroad = .init()
+    static let facebook: FacebookBroad = .init(with: .defaultActivation)
     static let firebase: FirebaseBroad = .init()
     static let common: Butter = .init(broads: analog, facebook, firebase)
 }
