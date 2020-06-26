@@ -1,6 +1,6 @@
 # ButterBroad
 
-ButterBroad is a lightweight aggregator for different analytic components such as Facebook, Firebase, Crashlytics e.t.c.
+ButterBroad is a lightweight aggregator for different analytic components such as Facebook, Firebase, e.t.c.
 
 ## Features
 - Combines different analytics components
@@ -27,33 +27,137 @@ Drag `Sources` folder from [last release](https://github.com/rosberry/butterbroa
 ## Usage
 - Provide an adapter for analytic component by the implementing of  `Analytics` protocol
 - Combine adapters using an instance of `Butter` class
+- Activate a `Butter` instace in `application(_,didFinishLaunchingWithOptions)`
+
 ```swift
 import ButterBroad
 
 extension Butter {
     static let common: Butter = .init(broads: <YOUR ADAPTERS THERE>)
 }
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Butter.common.activate()
+        return true
+    }
+}
 ```
 - Use `logEvent` method to send an event with custom name  
 
 ## Favorite broads
 
-- [AnalogBroad](https://github.com/rosberry/AnalogBroad)
-- [FirebaseBroad](https://github.com/rosberry/CrashlyticsBroad)
-- [FacebookBroad](https://github.com/rosberry/FacebookBroad)
+- [AnalogBroad](#analog-broad)
+- [FirebaseBroad](#firebase-broad)
+- [FacebookBroad](#facebook-broad)
+
+### Analog broad
+
+[Analog](https://github.com/rosberry/analog) is a simple logger for any events you want. It gives you a simple sessions mechanics and two ways to view events right in your app. To integrate `AnalogBroad` into your project you integrate `Analog` via carthage following the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application):
+
+```sh
+$ github "rosberry/Analog"
+```
+
+Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into  `ButterBroad`:
+
+```swift
+//  Butter+ApplicationBroads.swift
+
+import ButterBroad
+
+extension Butter {
+    static let analog: AnalogBroad = .init()
+    static let common: Butter = .init(broads: analog)
+}
+```
+
+### Firebase broad
+
+To integrate `FirebaseBroad` into your project you integrate `Firebase` and `FirebaseAnalytics` by any awailable way. For example there is an [oficial interation instuction](https://firebase.google.com/docs/analytics/get-started?platform=ios) from Firebase. If you preffer `Carthage` then you can use folowing binaries:
+
+```
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json"
+```
+
+Unlike `Pod installation` `FirebaseCrashlytics.framework`  builded via carthage has not required scripts `run` and `upload-symbols` scripts, so we packed them into `ButterBroad.framework` for your convenience. To use them create run script phase `Crashlytics` with content
+
+```sh
+"$PROJECT_DIR/Carthage/Build/iOS/ButterBroad.framework/run"
+```
+
+and put `DSYM` and `Info.plist` files as `Input files` of the scipt
+```sh
+${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}
+$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)
+```
+
+Then copy [FirebaseBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FirebaseBroad.swift) into your project and put an `FirebaseBroad` instance into  `ButterBroad`:
+
+```swift
+//  Butter+ApplicationBroads.swift
+
+import ButterBroad
+
+extension Butter {
+    static let firebase: FirebaseBroad = .init(with: default)
+    static let common: Butter = .init(broads: analog)
+}
+```
+
+You can put one of the folowing activation types into initializer:
+
+- `.none`: No action requered.  `FirebaseApp.configure`  should be triggerd from the application. Use it if your app has other firebase features and firbase app configuration is your strict responsibility. This value is asumed by default.
+- `.default`: perform `FirebaseApp.configure()` in the `FirebaseBroad`. Use it if you do not use other firebase features.
+- `.custom`: perform specific `FirebaseApp.configure` in the `FirebaseBroad`. Use it if you do not use other firebase features but you need to specify some configuration parameters. 
+
+### Facebook broad
+
+To integrate `FacebookBroad` into your project you integrate `Facebook` and `FacebookAnalytics` by [any awailable way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/).
+
+Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FacebookBroad.swift) into your project and put an `FacebookBroad` instance into  `ButterBroad`:
+
+```swift
+//  Butter+ApplicationBroads.swift
+
+import ButterBroad
+
+extension Butter {
+    static let facebook: FacebookBroad = .init(with: default)
+    static let common: Butter = .init(broads: facebook)
+}
+```
+
+You can put one of the folowing activation types into initializer:
+
+- `.none`: No action requered.  `AppEvents.activateApp`  should be triggerd from the application. Use it if your app has other facebook features and facebook app configuration is your strict responsibility. This value is asumed by default.
+- `.default`: perform `AppEvents.activateApp()` in the `FacebookBroad`. Use it if you do not use other facebook features.
+- `.custom`: perform specific `AppEvents.activateApp` in the `FacebookBroad`. Use it if you do not use other facebook features but you need to specify some configuration parameters. 
+
+If you use `.default` or `.custom` activation type so do not forget to activate the `FacebookBroad` in `func applicationDidBecomeActive`
+
+```swift
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Butter.facebook.activate()
+    }
+}
+```
+
+## Example
 
 ```swift
 //  Butter+ApplicationBroads.swift
 import UIKit
 import ButterBroad
-import AnalogBroad
-import FacebookBroad
-import FirebaseBroad
 
 extension Butter {
     static let analog: AnalogBroad = .init()
-    static let facebook: FacebookBroad = .init()
-    static let firebase: FirebaseBroad = .init()
+    static let facebook: FacebookBroad = .init(with: .default)
+    static let firebase: FirebaseBroad = .init(with: .default)
     static let common: Butter = .init(broads: analog, facebook, firebase)
 }
 
