@@ -28,6 +28,9 @@
 		0105292224A5D17F00ABB799 /* FacebookBroad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105291F24A5D17F00ABB799 /* FacebookBroad.swift */; };
 		0105292324A5D17F00ABB799 /* FirebaseBroad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105292024A5D17F00ABB799 /* FirebaseBroad.swift */; };
 		0105292424A5D17F00ABB799 /* AnalogBroad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105292124A5D17F00ABB799 /* AnalogBroad.swift */; };
+		0105292824A5D27200ABB799 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0105292524A5D27100ABB799 /* GoogleDataTransportCCTSupport.framework */; };
+		0105292924A5D27200ABB799 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0105292624A5D27100ABB799 /* GoogleAppMeasurement.framework */; };
+		0105292A24A5D27200ABB799 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0105292724A5D27200ABB799 /* GoogleDataTransport.framework */; };
 		0105E57D24A4B81300ABB799 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105E57A24A4B81300ABB799 /* AnyDecodable.swift */; };
 		0105E57E24A4B81300ABB799 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105E57B24A4B81300ABB799 /* AnyCodable.swift */; };
 		0105E57F24A4B81300ABB799 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105E57C24A4B81300ABB799 /* AnyEncodable.swift */; };
@@ -71,6 +74,9 @@
 		0105291F24A5D17F00ABB799 /* FacebookBroad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookBroad.swift; path = Sources/Broads/FacebookBroad.swift; sourceTree = SOURCE_ROOT; };
 		0105292024A5D17F00ABB799 /* FirebaseBroad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseBroad.swift; path = Sources/Broads/FirebaseBroad.swift; sourceTree = SOURCE_ROOT; };
 		0105292124A5D17F00ABB799 /* AnalogBroad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnalogBroad.swift; path = Sources/Broads/AnalogBroad.swift; sourceTree = SOURCE_ROOT; };
+		0105292524A5D27100ABB799 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = ButterBroadExample/Carthage/Build/iOS/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		0105292624A5D27100ABB799 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = ButterBroadExample/Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		0105292724A5D27200ABB799 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = ButterBroadExample/Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		0105E57524A4B60A00ABB799 /* ButterBroad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ButterBroad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0105E57A24A4B81300ABB799 /* AnyDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 		0105E57B24A4B81300ABB799 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
@@ -99,20 +105,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0105291724A5D0BF00ABB799 /* Analog.framework in Frameworks */,
+				0105291524A5D0BF00ABB799 /* ButterBroad.framework in Frameworks */,
+				0105291C24A5D0BF00ABB799 /* FBSDKCoreKit.framework in Frameworks */,
 				0105291224A5D0BF00ABB799 /* Firebase.framework in Frameworks */,
 				0105291324A5D0BF00ABB799 /* FacebookCore.framework in Frameworks */,
 				0105291424A5D0BF00ABB799 /* FirebaseCore.framework in Frameworks */,
-				0105291524A5D0BF00ABB799 /* ButterBroad.framework in Frameworks */,
 				0105291624A5D0BF00ABB799 /* FirebaseCrashlytics.framework in Frameworks */,
-				0105291724A5D0BF00ABB799 /* Analog.framework in Frameworks */,
 				0105291824A5D0BF00ABB799 /* FirebaseInstallations.framework in Frameworks */,
 				0105291924A5D0BF00ABB799 /* FirebaseAnalytics.framework in Frameworks */,
 				0105291A24A5D0BF00ABB799 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				0105291B24A5D0BF00ABB799 /* nanopb.framework in Frameworks */,
-				0105291C24A5D0BF00ABB799 /* FBSDKCoreKit.framework in Frameworks */,
 				0105291D24A5D0BF00ABB799 /* FIRAnalyticsConnector.framework in Frameworks */,
-				0105291E24A5D0BF00ABB799 /* PromisesObjC.framework in Frameworks */,
+				0105292824A5D27200ABB799 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				0105292924A5D27200ABB799 /* GoogleAppMeasurement.framework in Frameworks */,
+				0105292A24A5D27200ABB799 /* GoogleDataTransport.framework in Frameworks */,
 				0105290424A5D0A200ABB799 /* GoogleUtilities.framework in Frameworks */,
+				0105291B24A5D0BF00ABB799 /* nanopb.framework in Frameworks */,
+				0105291E24A5D0BF00ABB799 /* PromisesObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +166,9 @@
 		012A0247233CD68000C99775 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0105292624A5D27100ABB799 /* GoogleAppMeasurement.framework */,
+				0105292724A5D27200ABB799 /* GoogleDataTransport.framework */,
+				0105292524A5D27100ABB799 /* GoogleDataTransportCCTSupport.framework */,
 				0105290A24A5D0BE00ABB799 /* Analog.framework */,
 				0105290824A5D0BE00ABB799 /* ButterBroad.framework */,
 				0105290624A5D0BE00ABB799 /* FacebookCore.framework */,
@@ -355,10 +367,10 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/FirebaseBroadExample/Carthage/Build/iOS/Analog.framework",
-				"$(SRCROOT)/FirebaseBroadExample/Carthage/Build/iOS/FacebookCore.framework",
-				"$(SRCROOT)/FirebaseBroadExample/Carthage/Build/iOS/FBSDKCoreKit.framework",
-				"$(SRCROOT)/FirebaseBroadExample/Carthage/Build/iOS/Firebase.framework",
+				"$(SRCROOT)/ButterBroadExample/Carthage/Build/iOS/Analog.framework",
+				"$(SRCROOT)/ButterBroadExample/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/ButterBroadExample/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/ButterBroadExample/Carthage/Build/iOS/Firebase.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
