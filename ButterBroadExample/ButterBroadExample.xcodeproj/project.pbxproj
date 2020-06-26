@@ -157,11 +157,11 @@
 				01740E6823C6F55F003299B2 /* Cartfile */,
 				01740E4E23C6F48B003299B2 /* AppDelegate.swift */,
 				01740E5223C6F48B003299B2 /* ViewController.swift */,
+				01740E6A23C6F606003299B2 /* Butter+ApplicationBroads.swift */,
 				01740E5423C6F48B003299B2 /* Main.storyboard */,
 				01740E5723C6F48C003299B2 /* Assets.xcassets */,
 				01740E5923C6F48C003299B2 /* LaunchScreen.storyboard */,
 				01740E5C23C6F48C003299B2 /* Info.plist */,
-				01740E6A23C6F606003299B2 /* Butter+ApplicationBroads.swift */,
 			);
 			path = ButterBroadExample;
 			sourceTree = "<group>";
@@ -494,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.ButterBroadExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
@@ -519,6 +520,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.ButterBroadExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
@@ -604,6 +606,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.ButterBroadExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";

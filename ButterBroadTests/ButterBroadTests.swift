@@ -3,7 +3,6 @@
 //
 
 import XCTest
-import AnyCodable
 @testable import ButterBroad
 
 final class ButterBroadTests: XCTestCase {
