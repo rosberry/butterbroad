@@ -54,10 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ### Analog broad
 
-[Analog](https://github.com/rosberry/analog) is a simple logger for any events you want. It gives you a simple sessions mechanics and two ways to view events right in your app. To integrate `AnalogBroad` into your project you integrate `Analog` via carthage following the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application):
+[Analog](https://github.com/rosberry/analog) is a simple logger for any events you want. It gives you a simple sessions mechanics and two ways to view events right in your app. To integrate `AnalogBroad` into your project you need to integrate `Analog` via carthage before following the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application):
 
 ```sh
-$ github "rosberry/Analog"
+github "rosberry/Analog"
 ```
 
 Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into  `ButterBroad`:
@@ -75,14 +75,14 @@ extension Butter {
 
 ### Firebase broad
 
-To integrate `FirebaseBroad` into your project you integrate `Firebase` and `FirebaseAnalytics` by any awailable way. For example there is an [oficial interation instuction](https://firebase.google.com/docs/analytics/get-started?platform=ios) from Firebase. If you preffer `Carthage` then you can use folowing binaries:
+To integrate `FirebaseBroad` into your project you need to integrate `Firebase` and `FirebaseAnalytics` by any awailable way before. For example there is an [oficial interation instuction](https://firebase.google.com/docs/analytics/get-started?platform=ios) from Firebase. If you preffer `Carthage` then you can use folowing binaries:
 
 ```
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json"
 ```
 
-Unlike `Pod installation` `FirebaseCrashlytics.framework`  builded via carthage has not required scripts `run` and `upload-symbols` scripts, so we packed them into `ButterBroad.framework` for your convenience. To use them create run script phase `Crashlytics` with content
+Unlike `Pod installation` `FirebaseCrashlytics.framework`  builded via carthage has not required  `run` and `upload-symbols` scripts, so we packed them into `ButterBroad.framework` for your convenience. To use them create run script phase `Crashlytics` with content
 
 ```sh
 "$PROJECT_DIR/Carthage/Build/iOS/ButterBroad.framework/run"
@@ -102,7 +102,7 @@ Then copy [FirebaseBroad](https://github.com/rosberry/butterbroad/tree/Sources/B
 import ButterBroad
 
 extension Butter {
-    static let firebase: FirebaseBroad = .init(with: default)
+    static let firebase: FirebaseBroad = .init(with: .default)
     static let common: Butter = .init(broads: analog)
 }
 ```
@@ -115,7 +115,7 @@ You can put one of the folowing activation types into initializer:
 
 ### Facebook broad
 
-To integrate `FacebookBroad` into your project you integrate `Facebook` and `FacebookAnalytics` by [any awailable way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/).
+To integrate `FacebookBroad` into your project you need to integrate `Facebook` and `FacebookAnalytics` by [any awailable way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/) before.
 
 Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FacebookBroad.swift) into your project and put an `FacebookBroad` instance into  `ButterBroad`:
 
@@ -125,7 +125,7 @@ Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/tree/Sources/B
 import ButterBroad
 
 extension Butter {
-    static let facebook: FacebookBroad = .init(with: default)
+    static let facebook: FacebookBroad = .init(with: .default)
     static let common: Butter = .init(broads: facebook)
 }
 ```
@@ -136,13 +136,46 @@ You can put one of the folowing activation types into initializer:
 - `.default`: perform `AppEvents.activateApp()` in the `FacebookBroad`. Use it if you do not use other facebook features.
 - `.custom`: perform specific `AppEvents.activateApp` in the `FacebookBroad`. Use it if you do not use other facebook features but you need to specify some configuration parameters. 
 
-If you use `.default` or `.custom` activation type so do not forget to activate the `FacebookBroad` in `func applicationDidBecomeActive`
+If you use `.default` or `.custom` activation type please do not forget to activate the `FacebookBroad` in `func applicationDidBecomeActive`
 
 ```swift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         Butter.facebook.activate()
+    }
+}
+```
+
+### User defined broad
+
+To specify your own analytics agreggator create class that implements `ButterBroad.Analytics` protocol and specify `public func log(_ event: Event)` method to send data to some analytics. `Event` contains `String` name and `[String: AnyCodable]` parameters, where [`AnyCodable`](https://github.com/Flight-School/AnyCodable/tree/master/Sources/AnyCodable) is type erraser for `Codable` generic protocol. If the analytics assumes some activation you can specify `public func activate()` method. To do it in more convenient way `ButterBroad` contains `enum Activation`. Look on the `FirebaseBroad` implementation for example
+
+```swift
+import ButterBroad
+import Firebase
+
+final public class FirebaseBroad: ButterBroad.Analytics {
+
+    private let activation: Activation
+
+    public init(with activation: Activation = .none) {
+        self.activation = activation
+    }
+
+    public func log(_ event: Event) {
+        Firebase.Analytics.logEvent(event.name, parameters: event.params)
+    }
+
+    public func activate() {
+        switch activation {
+        case .custom(let activationHandler):
+            activationHandler()
+        case .default:
+            FirebaseApp.configure()
+        case .none:
+            return
+        }
     }
 }
 ```
