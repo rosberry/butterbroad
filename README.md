@@ -27,7 +27,7 @@ Drag `Sources` folder from [last release](https://github.com/rosberry/butterbroa
 ## Usage
 - Provide an adapter for analytic component by the implementing of  `Analytics` protocol
 - Combine adapters using an instance of `Butter` class
-- Activate a `Butter` instace in `application(_,didFinishLaunchingWithOptions)`
+- Activate a `Butter` instance in `application(_:didFinishLaunchingWithOptions:)`
 
 ```swift
 import ButterBroad
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 github "rosberry/Analog"
 ```
 
-Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into  `ButterBroad`:
+Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into `ButterBroad`:
 
 ```swift
 //  Butter+ApplicationBroads.swift
@@ -75,14 +75,14 @@ extension Butter {
 
 ### Firebase broad
 
-To integrate `FirebaseBroad` into your project you need to integrate `Firebase` and `FirebaseAnalytics` by any awailable way before. For example there is an [oficial interation instuction](https://firebase.google.com/docs/analytics/get-started?platform=ios) from Firebase. If you preffer `Carthage` then you can use folowing binaries:
+To integrate `FirebaseBroad` into your project you need to integrate `Firebase` and `FirebaseAnalytics` by any available way before. For example there is an [oficial interation instuction](https://firebase.google.com/docs/analytics/get-started?platform=ios) from Firebase. If you preffer `Carthage` then you can use following binaries:
 
 ```
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json"
 ```
 
-Unlike `Pod installation` `FirebaseCrashlytics.framework`  builded via carthage has not required  `run` and `upload-symbols` scripts, so we packed them into `ButterBroad.framework` for your convenience. To use them create run script phase `Crashlytics` with content
+Unlike `Pod installation` `FirebaseCrashlytics.framework`  built via carthage has not required  `run` and `upload-symbols` scripts, so we packed them into `ButterBroad.framework` for your convenience. To use them create run script phase `Crashlytics` with content
 
 ```sh
 "$PROJECT_DIR/Carthage/Build/iOS/ButterBroad.framework/run"
@@ -107,15 +107,15 @@ extension Butter {
 }
 ```
 
-You can put one of the folowing activation types into initializer:
+You can put one of the following activation types into initializer:
 
-- `.none`: No action requered.  `FirebaseApp.configure`  should be triggerd from the application. Use it if your app has other firebase features and firbase app configuration is your strict responsibility. This value is asumed by default.
+- `.none`: No action required.  `FirebaseApp.configure`  should be triggered from the application. Use it if your app has other firebase features and firebase app configuration is your strict responsibility. This value is assumed by default.
 - `.default`: perform `FirebaseApp.configure()` in the `FirebaseBroad`. Use it if you do not use other firebase features.
 - `.custom`: perform specific `FirebaseApp.configure` in the `FirebaseBroad`. Use it if you do not use other firebase features but you need to specify some configuration parameters. 
 
 ### Facebook broad
 
-To integrate `FacebookBroad` into your project you need to integrate `Facebook` and `FacebookAnalytics` by [any awailable way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/) before.
+To integrate `FacebookBroad` into your project you need to integrate `Facebook` and `FacebookAnalytics` by [any available way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/) before.
 
 Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FacebookBroad.swift) into your project and put an `FacebookBroad` instance into  `ButterBroad`:
 
@@ -130,9 +130,9 @@ extension Butter {
 }
 ```
 
-You can put one of the folowing activation types into initializer:
+You can put one of the following activation types into initializer:
 
-- `.none`: No action requered.  `AppEvents.activateApp`  should be triggerd from the application. Use it if your app has other facebook features and facebook app configuration is your strict responsibility. This value is asumed by default.
+- `.none`: No action required.  `AppEvents.activateApp`  should be triggered from the application. Use it if your app has other facebook features and facebook app configuration is your strict responsibility. This value is assumed by default.
 - `.default`: perform `AppEvents.activateApp()` in the `FacebookBroad`. Use it if you do not use other facebook features.
 - `.custom`: perform specific `AppEvents.activateApp` in the `FacebookBroad`. Use it if you do not use other facebook features but you need to specify some configuration parameters. 
 
@@ -149,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ### User defined broad
 
-To specify your own analytics agreggator create class that implements `ButterBroad.Analytics` protocol and specify `public func log(_ event: Event)` method to send data to some analytics. `Event` contains `String` name and `[String: AnyCodable]` parameters, where [`AnyCodable`](https://github.com/Flight-School/AnyCodable/tree/master/Sources/AnyCodable) is type erraser for `Codable` generic protocol. If the analytics assumes some activation you can specify `public func activate()` method. To do it in more convenient way `ButterBroad` contains `enum Activation`. Look on the `FirebaseBroad` implementation for example
+To specify your own analytics aggregator create class that implements `ButterBroad.Analytics` protocol and specify `public func log(_ event: Event)` method to send data to some analytics. `Event` contains `String` name and `[String: AnyCodable]` parameters, where [`AnyCodable`](https://github.com/Flight-School/AnyCodable/tree/master/Sources/AnyCodable) is type eraser for `Codable` generic protocol. If the analytics assumes some activation you can specify `public func activate()` method. To do it in a more convenient way `ButterBroad` contains `enum Activation`. Look on the `FirebaseBroad` implementation for example
 
 ```swift
 import ButterBroad

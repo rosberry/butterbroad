@@ -16,7 +16,7 @@ final public class FirebaseBroad: ButterBroad.Analytics {
     /// - parameter activation: specifies an action for the Facebook that should be aplied on `FirebaseBroad`activation. The default value `.none` assumes that
     /// no action required and `FirebaseApp.configure` will called on the user side. The value `.default` assumes that `FirebaseApp.configure()` will called
     /// on the `FirebaseBroad` side. The value `.custom` assumes that user provided specific activation will called on the `FirebaseBroad` side.
-    public init(with activation: Activation = .none) {
+    public init(activation: Activation = .none) {
         self.activation = activation
     }
 
