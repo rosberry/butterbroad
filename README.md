@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 github "rosberry/Analog"
 ```
 
-Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into `ButterBroad`:
+Then copy [AnalogBroad](https://github.com/rosberry/butterbroad/blob/master/Sources/Broads/AnalogBroad.swift) into your project and put an `AnalogBroad` instance into `ButterBroad`:
 
 ```swift
 //  Butter+ApplicationBroads.swift
@@ -94,7 +94,7 @@ ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TAR
 $(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)
 ```
 
-Then copy [FirebaseBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FirebaseBroad.swift) into your project and put an `FirebaseBroad` instance into  `ButterBroad`:
+Then copy [FirebaseBroad](https://github.com/rosberry/butterbroad/blob/master/Sources/Broads/FirebaseBroad.swift) into your project and put an `FirebaseBroad` instance into  `ButterBroad`:
 
 ```swift
 //  Butter+ApplicationBroads.swift
@@ -117,7 +117,7 @@ You can put one of the following activation types into initializer:
 
 To integrate `FacebookBroad` into your project you need to integrate `Facebook` and `FacebookAnalytics` by [any available way](https://developers.facebook.com/docs/analytics/quickstart-list/ios/) before.
 
-Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/tree/Sources/Broads/FacebookBroad.swift) into your project and put an `FacebookBroad` instance into  `ButterBroad`:
+Then copy [FacebookBroad](https://github.com/rosberry/butterbroad/blob/master/Sources/Broads/FacebookBroad.swift) into your project and put an `FacebookBroad` instance into  `ButterBroad`:
 
 ```swift
 //  Butter+ApplicationBroads.swift
