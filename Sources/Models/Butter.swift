@@ -127,7 +127,7 @@ public final class Butter: Analytics {
             self.startSending()
 
             self.broads.forEach { broad in
-                broad.activationHandler?()
+                broad.activate()
             }
         }
     }
