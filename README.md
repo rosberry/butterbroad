@@ -13,7 +13,17 @@ ButterBroad is a lightweight aggregator for different analytic components such a
 
 ## Installation
 
-#### Carthage
+### Depo
+
+[Depo](https://github.com/rosberry/depo) is a universal dependency manager that combines CocoaPods, Carthage and SPM.
+To integrate ButterBroad into your Xcode project using Depo, specify it in your `Depofile`:
+```yaml
+carts:
+  - kind: github
+    identifier: rosberry/ButterBroad
+```
+
+### Carthage
 Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the framework to your project.
 
 ```
