@@ -21,7 +21,11 @@ final public class FirebaseBroad: ButterBroad.Analytics {
     }
 
     public func log(_ event: Event) {
-        Firebase.Analytics.logEvent(event.name, parameters: event.params)
+        var params: [String: Any] = [:]
+        event.params.forEach { (key: String, anyCodable: AnyCodable) in
+            params[key] = anyCodable.value
+        }
+        Firebase.Analytics.logEvent(event.name, parameters: params)
     }
 
     public func activate() {
